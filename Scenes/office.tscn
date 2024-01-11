@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dthkptvdt54gs"]
+
+[ext_resource type="Texture2D" uid="uid://c6mfy3qjpepqy" path="res://Assets/Office/1-OFFICE.png" id="1_hvo1u"]
+
+[node name="Office" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(593, 357)
+texture = ExtResource("1_hvo1u")
