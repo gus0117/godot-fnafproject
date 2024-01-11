@@ -1,7 +1,39 @@
-[gd_scene load_steps=5 format=3 uid="uid://dthkptvdt54gs"]
+[gd_scene load_steps=40 format=3 uid="uid://dthkptvdt54gs"]
 
 [ext_resource type="Script" path="res://Scripts/office.gd" id="1_5tqkb"]
 [ext_resource type="Texture2D" uid="uid://c6mfy3qjpepqy" path="res://Assets/Office/1-OFFICE.png" id="1_hvo1u"]
+[ext_resource type="Texture2D" uid="uid://dewrbbl34mxfk" path="res://Assets/Office/Fan/1.png" id="3_j8ce7"]
+[ext_resource type="Texture2D" uid="uid://h3qvirqbjucu" path="res://Assets/Office/Fan/1_fix.png" id="4_jl2vj"]
+[ext_resource type="Texture2D" uid="uid://bhbs20d2sok0n" path="res://Assets/Office/Fan/2.png" id="4_x57by"]
+[ext_resource type="Texture2D" uid="uid://dioa5fipociiq" path="res://Assets/Office/Fan/3.png" id="5_ojba0"]
+[ext_resource type="Texture2D" uid="uid://cv3dunxaw62el" path="res://Assets/Office/Doors/Left/14.png" id="7_li0wn"]
+[ext_resource type="Texture2D" uid="uid://ckl3q15gs073x" path="res://Assets/Office/Doors/Left/1.png" id="7_lle6w"]
+[ext_resource type="Texture2D" uid="uid://c1jxhlb3kkhip" path="res://Assets/Office/Doors/Left/2.png" id="8_kbnbt"]
+[ext_resource type="Texture2D" uid="uid://cpht5ucy2h2sk" path="res://Assets/Office/Doors/Left/3.png" id="9_4de3l"]
+[ext_resource type="Texture2D" uid="uid://bxf2iihqxg6w7" path="res://Assets/Office/Doors/Left/4.png" id="10_acpmp"]
+[ext_resource type="Texture2D" uid="uid://unmk3rtinf32" path="res://Assets/Office/Doors/Left/5.png" id="11_q10lj"]
+[ext_resource type="Texture2D" uid="uid://c07g80h2pxg34" path="res://Assets/Office/Doors/Left/6.png" id="12_nokl2"]
+[ext_resource type="Texture2D" uid="uid://cpfk77fo8i46f" path="res://Assets/Office/Doors/Left/7.png" id="13_yw757"]
+[ext_resource type="Texture2D" uid="uid://bd7nsymc4flt8" path="res://Assets/Office/Doors/Left/8.png" id="14_sg36a"]
+[ext_resource type="Texture2D" uid="uid://brblms4kf4v3j" path="res://Assets/Office/Doors/Left/9.png" id="15_yqw14"]
+[ext_resource type="Texture2D" uid="uid://0dgucqcjxouo" path="res://Assets/Office/Doors/Left/10.png" id="16_biiyr"]
+[ext_resource type="Texture2D" uid="uid://be166smsekua5" path="res://Assets/Office/Doors/Left/11.png" id="17_0t8s6"]
+[ext_resource type="Texture2D" uid="uid://d1ovc1ip4l7bk" path="res://Assets/Office/Doors/Left/12.png" id="18_ejudh"]
+[ext_resource type="Texture2D" uid="uid://cfnordlho0yc1" path="res://Assets/Office/Doors/Left/13.png" id="19_d6tg2"]
+[ext_resource type="Texture2D" uid="uid://b2rjqlpmj3jjm" path="res://Assets/Office/Doors/Right/1.png" id="21_8de7b"]
+[ext_resource type="Texture2D" uid="uid://i5n5c1t1rvgp" path="res://Assets/Office/Doors/Right/2.png" id="22_ddt03"]
+[ext_resource type="Texture2D" uid="uid://dc87wjqnl3boa" path="res://Assets/Office/Doors/Right/3.png" id="23_yqfpm"]
+[ext_resource type="Texture2D" uid="uid://k6gxh8luvrni" path="res://Assets/Office/Doors/Right/4.png" id="24_hao0j"]
+[ext_resource type="Texture2D" uid="uid://dyg05oypy74t3" path="res://Assets/Office/Doors/Right/5.png" id="25_sosh3"]
+[ext_resource type="Texture2D" uid="uid://d03lmf512p0pb" path="res://Assets/Office/Doors/Right/6.png" id="26_6x54a"]
+[ext_resource type="Texture2D" uid="uid://v1j3ycnoi6ch" path="res://Assets/Office/Doors/Right/7.png" id="27_2ki3s"]
+[ext_resource type="Texture2D" uid="uid://datio2twqycgb" path="res://Assets/Office/Doors/Right/8.png" id="28_vskrk"]
+[ext_resource type="Texture2D" uid="uid://cn6pik84u6064" path="res://Assets/Office/Doors/Right/9.png" id="29_b30h4"]
+[ext_resource type="Texture2D" uid="uid://nw3cqx15u28o" path="res://Assets/Office/Doors/Right/10.png" id="30_74m2j"]
+[ext_resource type="Texture2D" uid="uid://4r4pi0w3fse" path="res://Assets/Office/Doors/Right/11.png" id="31_8eaku"]
+[ext_resource type="Texture2D" uid="uid://c5qjjovjaumi0" path="res://Assets/Office/Doors/Right/12.png" id="32_lnriv"]
+[ext_resource type="Texture2D" uid="uid://cddkxdcigvdwi" path="res://Assets/Office/Doors/Right/13.png" id="33_5r0ei"]
+[ext_resource type="Texture2D" uid="uid://l3wcif2iugse" path="res://Assets/Office/Doors/Right/14.png" id="34_p2vr1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uuyub"]
 size = Vector2(516, 735)
@@ -9,31 +41,197 @@ size = Vector2(516, 735)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c45i5"]
 size = Vector2(494, 733)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_whb1e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_j8ce7")
+}],
+"loop": true,
+"name": &"turnoff",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_jl2vj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_x57by")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ojba0")
+}],
+"loop": true,
+"name": &"turnon",
+"speed": 15.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4lfw7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_lle6w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_kbnbt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_4de3l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_acpmp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_q10lj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_nokl2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_yw757")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_sg36a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_yqw14")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_biiyr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_0t8s6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_ejudh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_d6tg2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_li0wn")
+}],
+"loop": false,
+"name": &"close",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_lle6w")
+}],
+"loop": false,
+"name": &"open",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nmmo6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_8de7b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_ddt03")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_yqfpm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_hao0j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_sosh3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_6x54a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_2ki3s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_vskrk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_b30h4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_74m2j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_8eaku")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_lnriv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_5r0ei")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_p2vr1")
+}],
+"loop": false,
+"name": &"close",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_8de7b")
+}],
+"loop": false,
+"name": &"open",
+"speed": 5.0
+}]
+
 [node name="Office" type="Node2D"]
 script = ExtResource("1_5tqkb")
-
-[node name="Background" type="Sprite2D" parent="."]
-position = Vector2(629, 359)
-texture = ExtResource("1_hvo1u")
 
 [node name="Sides" type="Node" parent="."]
 
 [node name="LeftSide" type="Area2D" parent="Sides"]
 
 [node name="Collider" type="CollisionShape2D" parent="Sides/LeftSide"]
+visible = false
 position = Vector2(86, 357.5)
 shape = SubResource("RectangleShape2D_uuyub")
 
 [node name="RightSide" type="Area2D" parent="Sides"]
 
 [node name="Collider" type="CollisionShape2D" parent="Sides/RightSide"]
+visible = false
 position = Vector2(1183, 356.5)
 shape = SubResource("RectangleShape2D_c45i5")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(629, 359)
+texture = ExtResource("1_hvo1u")
 
 [node name="Camera" type="Node2D" parent="."]
 position = Vector2(642, 359)
 
 [node name="Camera2D" type="Camera2D" parent="Camera"]
+
+[node name="Fan" type="Node" parent="."]
+
+[node name="FanAnimation" type="AnimatedSprite2D" parent="Fan"]
+position = Vector2(677, 400)
+sprite_frames = SubResource("SpriteFrames_whb1e")
+animation = &"turnon"
+autoplay = "turnon"
+frame_progress = 0.902382
+
+[node name="Doors" type="Node" parent="."]
+
+[node name="LeftDoor" type="AnimatedSprite2D" parent="Doors"]
+position = Vector2(15, 358)
+sprite_frames = SubResource("SpriteFrames_4lfw7")
+animation = &"open"
+autoplay = "open"
+
+[node name="RigthDoor" type="AnimatedSprite2D" parent="Doors"]
+position = Vector2(1229, 357)
+sprite_frames = SubResource("SpriteFrames_nmmo6")
+animation = &"open"
+autoplay = "open"
 
 [connection signal="mouse_entered" from="Sides/LeftSide" to="." method="_on_left_side_mouse_entered"]
 [connection signal="mouse_exited" from="Sides/LeftSide" to="." method="_on_left_side_mouse_exited"]
