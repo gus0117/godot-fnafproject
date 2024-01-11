@@ -30,7 +30,7 @@ func _on_right_side_mouse_exited():
 
 
 func MoveCamera(isLeft: bool, isRight: bool) -> void:
-	if(isLeft and $Camera.position.x > 430):
+	if(isLeft and $Camera.position.x > 473):
 		$Camera.position.x -= CAM_SPEED
 	elif(isRight and $Camera.position.x < 780):
 		$Camera.position.x += CAM_SPEED

@@ -4,16 +4,16 @@
 [ext_resource type="Texture2D" uid="uid://c6mfy3qjpepqy" path="res://Assets/Office/1-OFFICE.png" id="1_hvo1u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uuyub"]
-size = Vector2(354, 735)
+size = Vector2(516, 735)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c45i5"]
-size = Vector2(349, 733)
+size = Vector2(494, 733)
 
 [node name="Office" type="Node2D"]
 script = ExtResource("1_5tqkb")
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(629, 357)
+position = Vector2(629, 359)
 texture = ExtResource("1_hvo1u")
 
 [node name="Sides" type="Node" parent="."]
@@ -21,13 +21,13 @@ texture = ExtResource("1_hvo1u")
 [node name="LeftSide" type="Area2D" parent="Sides"]
 
 [node name="Collider" type="CollisionShape2D" parent="Sides/LeftSide"]
-position = Vector2(167, 357.5)
+position = Vector2(86, 357.5)
 shape = SubResource("RectangleShape2D_uuyub")
 
 [node name="RightSide" type="Area2D" parent="Sides"]
 
 [node name="Collider" type="CollisionShape2D" parent="Sides/RightSide"]
-position = Vector2(1110.5, 356.5)
+position = Vector2(1183, 356.5)
 shape = SubResource("RectangleShape2D_c45i5")
 
 [node name="Camera" type="Node2D" parent="."]
