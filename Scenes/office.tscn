@@ -1,9 +1,41 @@
-[gd_scene load_steps=2 format=3 uid="uid://dthkptvdt54gs"]
+[gd_scene load_steps=5 format=3 uid="uid://dthkptvdt54gs"]
 
+[ext_resource type="Script" path="res://Scripts/office.gd" id="1_5tqkb"]
 [ext_resource type="Texture2D" uid="uid://c6mfy3qjpepqy" path="res://Assets/Office/1-OFFICE.png" id="1_hvo1u"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uuyub"]
+size = Vector2(354, 735)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c45i5"]
+size = Vector2(349, 733)
+
 [node name="Office" type="Node2D"]
+script = ExtResource("1_5tqkb")
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(593, 357)
+position = Vector2(629, 357)
 texture = ExtResource("1_hvo1u")
+
+[node name="Sides" type="Node" parent="."]
+
+[node name="LeftSide" type="Area2D" parent="Sides"]
+
+[node name="Collider" type="CollisionShape2D" parent="Sides/LeftSide"]
+position = Vector2(167, 357.5)
+shape = SubResource("RectangleShape2D_uuyub")
+
+[node name="RightSide" type="Area2D" parent="Sides"]
+
+[node name="Collider" type="CollisionShape2D" parent="Sides/RightSide"]
+position = Vector2(1110.5, 356.5)
+shape = SubResource("RectangleShape2D_c45i5")
+
+[node name="Camera" type="Node2D" parent="."]
+position = Vector2(642, 359)
+
+[node name="Camera2D" type="Camera2D" parent="Camera"]
+
+[connection signal="mouse_entered" from="Sides/LeftSide" to="." method="_on_left_side_mouse_entered"]
+[connection signal="mouse_exited" from="Sides/LeftSide" to="." method="_on_left_side_mouse_exited"]
+[connection signal="mouse_entered" from="Sides/RightSide" to="." method="_on_right_side_mouse_entered"]
+[connection signal="mouse_exited" from="Sides/RightSide" to="." method="_on_right_side_mouse_exited"]
