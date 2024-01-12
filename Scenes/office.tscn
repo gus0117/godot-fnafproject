@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://dthkptvdt54gs"]
+[gd_scene load_steps=50 format=3 uid="uid://dthkptvdt54gs"]
 
 [ext_resource type="Script" path="res://Scripts/office.gd" id="1_5tqkb"]
 [ext_resource type="Texture2D" uid="uid://c6mfy3qjpepqy" path="res://Assets/Office/1-OFFICE.png" id="1_hvo1u"]
@@ -38,6 +38,10 @@
 [ext_resource type="Texture2D" uid="uid://c7vx6neq5iarw" path="res://Assets/Office/Buttons/Left/1-STOPPED.png" id="35_rcsds"]
 [ext_resource type="Texture2D" uid="uid://c02ro5v03gos6" path="res://Assets/Office/Buttons/Left/2-DOOR.png" id="36_gi1ym"]
 [ext_resource type="Texture2D" uid="uid://baesl86f2sehv" path="res://Assets/Office/Buttons/Left/3-LIGHT.png" id="37_jxkhe"]
+[ext_resource type="Texture2D" uid="uid://b7xbd4lg3p00a" path="res://Assets/Office/Buttons/Right/4-BOTH.png" id="39_5yl7g"]
+[ext_resource type="Texture2D" uid="uid://bxvwr1xfslaa0" path="res://Assets/Office/Buttons/Right/2-DOOR.png" id="40_r63q7"]
+[ext_resource type="Texture2D" uid="uid://30cxdllf4w88" path="res://Assets/Office/Buttons/Right/3-LIGHT.png" id="41_f864s"]
+[ext_resource type="Texture2D" uid="uid://3j33h05w44w" path="res://Assets/Office/Buttons/Right/1-STOPPED.png" id="42_7qwpa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uuyub"]
 size = Vector2(516, 735)
@@ -221,6 +225,41 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_277ur"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("39_5yl7g")
+}],
+"loop": false,
+"name": &"both",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("40_r63q7")
+}],
+"loop": false,
+"name": &"door",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("41_f864s")
+}],
+"loop": false,
+"name": &"light",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("42_7qwpa")
+}],
+"loop": false,
+"name": &"stopped",
+"speed": 5.0
+}]
+
 [node name="Office" type="Node2D"]
 script = ExtResource("1_5tqkb")
 
@@ -263,7 +302,7 @@ frame_progress = 0.902382
 [node name="LeftDoor" type="AnimatedSprite2D" parent="Doors"]
 position = Vector2(15, 358)
 sprite_frames = SubResource("SpriteFrames_4lfw7")
-animation = &"open"
+animation = &"close"
 autoplay = "open"
 
 [node name="RigthDoor" type="AnimatedSprite2D" parent="Doors"]
@@ -282,18 +321,42 @@ offset_top = 314.0
 offset_right = -111.0
 offset_bottom = 368.0
 
-[node name="LeftBtnSprite" type="AnimatedSprite2D" parent="Buttons/LeftButtons"]
-position = Vector2(-132, 383)
-sprite_frames = SubResource("SpriteFrames_o6jy1")
-animation = &"stopped"
-
 [node name="LeftLightBtn" type="Button" parent="Buttons/LeftButtons"]
 offset_left = -148.0
 offset_top = 393.0
 offset_right = -108.0
 offset_bottom = 447.0
 
+[node name="LeftBtnSprite" type="AnimatedSprite2D" parent="Buttons/LeftButtons"]
+position = Vector2(-132, 383)
+sprite_frames = SubResource("SpriteFrames_o6jy1")
+animation = &"stopped"
+
+[node name="RightButtons" type="Node2D" parent="Buttons"]
+position = Vector2(1378, 387)
+
+[node name="RightDoorBtn" type="Button" parent="Buttons/RightButtons"]
+offset_left = -23.0
+offset_top = -67.0
+offset_right = 14.0
+offset_bottom = -18.0
+
+[node name="RightLightBtn" type="Button" parent="Buttons/RightButtons"]
+offset_left = -22.0
+offset_top = 8.0
+offset_right = 15.0
+offset_bottom = 62.0
+
+[node name="RightBtnSprite" type="AnimatedSprite2D" parent="Buttons/RightButtons"]
+sprite_frames = SubResource("SpriteFrames_277ur")
+animation = &"stopped"
+autoplay = "stopped"
+
 [connection signal="mouse_entered" from="Sides/LeftSide" to="." method="_on_left_side_mouse_entered"]
 [connection signal="mouse_exited" from="Sides/LeftSide" to="." method="_on_left_side_mouse_exited"]
 [connection signal="mouse_entered" from="Sides/RightSide" to="." method="_on_right_side_mouse_entered"]
 [connection signal="mouse_exited" from="Sides/RightSide" to="." method="_on_right_side_mouse_exited"]
+[connection signal="pressed" from="Buttons/LeftButtons/LeftDoorBtn" to="." method="_on_left_door_btn_pressed"]
+[connection signal="pressed" from="Buttons/LeftButtons/LeftLightBtn" to="." method="_on_left_light_btn_pressed"]
+[connection signal="pressed" from="Buttons/RightButtons/RightDoorBtn" to="." method="_on_right_door_btn_pressed"]
+[connection signal="pressed" from="Buttons/RightButtons/RightLightBtn" to="." method="_on_right_light_btn_pressed"]
