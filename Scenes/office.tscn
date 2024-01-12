@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://dthkptvdt54gs"]
+[gd_scene load_steps=45 format=3 uid="uid://dthkptvdt54gs"]
 
 [ext_resource type="Script" path="res://Scripts/office.gd" id="1_5tqkb"]
 [ext_resource type="Texture2D" uid="uid://c6mfy3qjpepqy" path="res://Assets/Office/1-OFFICE.png" id="1_hvo1u"]
@@ -34,6 +34,10 @@
 [ext_resource type="Texture2D" uid="uid://c5qjjovjaumi0" path="res://Assets/Office/Doors/Right/12.png" id="32_lnriv"]
 [ext_resource type="Texture2D" uid="uid://cddkxdcigvdwi" path="res://Assets/Office/Doors/Right/13.png" id="33_5r0ei"]
 [ext_resource type="Texture2D" uid="uid://l3wcif2iugse" path="res://Assets/Office/Doors/Right/14.png" id="34_p2vr1"]
+[ext_resource type="Texture2D" uid="uid://3ioevu7018ot" path="res://Assets/Office/Buttons/Left/4-BOTH.png" id="35_37pwc"]
+[ext_resource type="Texture2D" uid="uid://c7vx6neq5iarw" path="res://Assets/Office/Buttons/Left/1-STOPPED.png" id="35_rcsds"]
+[ext_resource type="Texture2D" uid="uid://c02ro5v03gos6" path="res://Assets/Office/Buttons/Left/2-DOOR.png" id="36_gi1ym"]
+[ext_resource type="Texture2D" uid="uid://baesl86f2sehv" path="res://Assets/Office/Buttons/Left/3-LIGHT.png" id="37_jxkhe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uuyub"]
 size = Vector2(516, 735)
@@ -182,6 +186,41 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_o6jy1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("35_37pwc")
+}],
+"loop": false,
+"name": &"both",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("36_gi1ym")
+}],
+"loop": false,
+"name": &"door",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("37_jxkhe")
+}],
+"loop": false,
+"name": &"light",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("35_rcsds")
+}],
+"loop": false,
+"name": &"stopped",
+"speed": 5.0
+}]
+
 [node name="Office" type="Node2D"]
 script = ExtResource("1_5tqkb")
 
@@ -232,6 +271,27 @@ position = Vector2(1229, 357)
 sprite_frames = SubResource("SpriteFrames_nmmo6")
 animation = &"open"
 autoplay = "open"
+
+[node name="Buttons" type="Node" parent="."]
+
+[node name="LeftButtons" type="Node2D" parent="Buttons"]
+
+[node name="LeftDoorBtn" type="Button" parent="Buttons/LeftButtons"]
+offset_left = -148.0
+offset_top = 314.0
+offset_right = -111.0
+offset_bottom = 368.0
+
+[node name="LeftBtnSprite" type="AnimatedSprite2D" parent="Buttons/LeftButtons"]
+position = Vector2(-132, 383)
+sprite_frames = SubResource("SpriteFrames_o6jy1")
+animation = &"stopped"
+
+[node name="LeftLightBtn" type="Button" parent="Buttons/LeftButtons"]
+offset_left = -148.0
+offset_top = 393.0
+offset_right = -108.0
+offset_bottom = 447.0
 
 [connection signal="mouse_entered" from="Sides/LeftSide" to="." method="_on_left_side_mouse_entered"]
 [connection signal="mouse_exited" from="Sides/LeftSide" to="." method="_on_left_side_mouse_exited"]
