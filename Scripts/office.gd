@@ -52,6 +52,7 @@ func AnimateButtons(door: bool, light: bool, sprite: AnimatedSprite2D) -> void:
 	sprite.play("both")
 
 func AnimateDoors(doorOpen: bool, sprite: AnimatedSprite2D) -> void:
+	$SFX/DoorSFX.play()
 	if(doorOpen):
 		sprite.play("close")
 		return
