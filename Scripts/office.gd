@@ -12,7 +12,8 @@ var isRightLightOn: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	$SFX/Ambience.play()
+	$SFX/FanSFX.play()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -65,7 +66,9 @@ func AnimateDoors(doorOpen: bool, sprite: AnimatedSprite2D) -> void:
 func AnimateLights(left: bool, right: bool) -> void:
 	if(not left and not right):
 		$Animations/Lights.play("default")
+		$SFX/BuzzLightsSFX.stop()
 		return
+	$SFX/BuzzLightsSFX.play()
 	if(left):
 		$Animations/Lights.play("leftLights")
 		return

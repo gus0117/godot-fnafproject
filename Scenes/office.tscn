@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://dthkptvdt54gs"]
+[gd_scene load_steps=57 format=3 uid="uid://dthkptvdt54gs"]
 
 [ext_resource type="Script" path="res://Scripts/office.gd" id="1_5tqkb"]
 [ext_resource type="Texture2D" uid="uid://c6mfy3qjpepqy" path="res://Assets/Office/1-OFFICE.png" id="1_hvo1u"]
@@ -44,7 +44,10 @@
 [ext_resource type="Texture2D" uid="uid://30cxdllf4w88" path="res://Assets/Office/Buttons/Right/3-LIGHT.png" id="41_f864s"]
 [ext_resource type="Texture2D" uid="uid://3j33h05w44w" path="res://Assets/Office/Buttons/Right/1-STOPPED.png" id="42_7qwpa"]
 [ext_resource type="AudioStream" uid="uid://dlchjw006b8mp" path="res://Assets/SoundsFX/SFXBible_12478.wav" id="43_yo750"]
+[ext_resource type="AudioStream" uid="uid://rx2kjnv5g8pg" path="res://Assets/SoundsFX/BallastHumMedium2.wav" id="44_dgob2"]
 [ext_resource type="Texture2D" uid="uid://ctjocthsdaemm" path="res://Assets/Office/Lights/RIGHT_LIGHT.png" id="45_1aejx"]
+[ext_resource type="AudioStream" uid="uid://c64e4jhf4vl82" path="res://Assets/SoundsFX/ambience2.wav" id="45_75k2v"]
+[ext_resource type="AudioStream" uid="uid://c1a0f7gvs01h7" path="res://Assets/SoundsFX/Buzz_Fan_Florescent2.wav" id="46_kicku"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uuyub"]
 size = Vector2(516, 735)
@@ -393,6 +396,17 @@ autoplay = "stopped"
 
 [node name="DoorSFX" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("43_yo750")
+
+[node name="BuzzLightsSFX" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("44_dgob2")
+
+[node name="Ambience" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("45_75k2v")
+volume_db = -13.117
+
+[node name="FanSFX" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("46_kicku")
+volume_db = -24.36
 
 [node name="Animations" type="Node2D" parent="."]
 position = Vector2(629, 359)
