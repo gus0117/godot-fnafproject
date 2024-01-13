@@ -1,7 +1,8 @@
-[gd_scene load_steps=51 format=3 uid="uid://dthkptvdt54gs"]
+[gd_scene load_steps=54 format=3 uid="uid://dthkptvdt54gs"]
 
 [ext_resource type="Script" path="res://Scripts/office.gd" id="1_5tqkb"]
 [ext_resource type="Texture2D" uid="uid://c6mfy3qjpepqy" path="res://Assets/Office/1-OFFICE.png" id="1_hvo1u"]
+[ext_resource type="Texture2D" uid="uid://cvq0c3ewideja" path="res://Assets/Office/Lights/LEFT_LIGHT.png" id="3_31nnv"]
 [ext_resource type="Texture2D" uid="uid://dewrbbl34mxfk" path="res://Assets/Office/Fan/1.png" id="3_j8ce7"]
 [ext_resource type="Texture2D" uid="uid://h3qvirqbjucu" path="res://Assets/Office/Fan/1_fix.png" id="4_jl2vj"]
 [ext_resource type="Texture2D" uid="uid://bhbs20d2sok0n" path="res://Assets/Office/Fan/2.png" id="4_x57by"]
@@ -43,6 +44,7 @@
 [ext_resource type="Texture2D" uid="uid://30cxdllf4w88" path="res://Assets/Office/Buttons/Right/3-LIGHT.png" id="41_f864s"]
 [ext_resource type="Texture2D" uid="uid://3j33h05w44w" path="res://Assets/Office/Buttons/Right/1-STOPPED.png" id="42_7qwpa"]
 [ext_resource type="AudioStream" uid="uid://dlchjw006b8mp" path="res://Assets/SoundsFX/SFXBible_12478.wav" id="43_yo750"]
+[ext_resource type="Texture2D" uid="uid://ctjocthsdaemm" path="res://Assets/Office/Lights/RIGHT_LIGHT.png" id="45_1aejx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uuyub"]
 size = Vector2(516, 735)
@@ -261,6 +263,39 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_eeo6b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_hvo1u")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_31nnv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_hvo1u")
+}],
+"loop": true,
+"name": &"leftLights",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("45_1aejx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_hvo1u")
+}],
+"loop": true,
+"name": &"rightLights",
+"speed": 20.0
+}]
+
 [node name="Office" type="Node2D"]
 script = ExtResource("1_5tqkb")
 
@@ -281,6 +316,7 @@ position = Vector2(1183, 356.5)
 shape = SubResource("RectangleShape2D_c45i5")
 
 [node name="Background" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(629, 359)
 texture = ExtResource("1_hvo1u")
 
@@ -357,6 +393,14 @@ autoplay = "stopped"
 
 [node name="DoorSFX" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("43_yo750")
+
+[node name="Animations" type="Node2D" parent="."]
+position = Vector2(629, 359)
+
+[node name="Lights" type="AnimatedSprite2D" parent="Animations"]
+sprite_frames = SubResource("SpriteFrames_eeo6b")
+autoplay = "default"
+frame_progress = 1.0
 
 [connection signal="mouse_entered" from="Sides/LeftSide" to="." method="_on_left_side_mouse_entered"]
 [connection signal="mouse_exited" from="Sides/LeftSide" to="." method="_on_left_side_mouse_exited"]

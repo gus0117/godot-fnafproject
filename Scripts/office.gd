@@ -40,16 +40,18 @@ func MoveCamera(isLeft: bool, isRight: bool) -> void:
 		$Camera.position.x += CAM_SPEED
 
 func AnimateButtons(door: bool, light: bool, sprite: AnimatedSprite2D) -> void:
-	if(not door and not light):
+	if not door and not light:
 		sprite.play("stopped")
 		return
-	if(door and not light):
+	if door and not light:
 		sprite.play("door")
 		return
-	if(not door and light):
+	if not door and light:
 		sprite.play("light")
 		return
-	sprite.play("both")
+	if door and light:
+		sprite.play("both")
+		return
 
 func AnimateDoors(doorOpen: bool, sprite: AnimatedSprite2D) -> void:
 	$SFX/DoorSFX.play()
@@ -60,6 +62,17 @@ func AnimateDoors(doorOpen: bool, sprite: AnimatedSprite2D) -> void:
 		sprite.play_backwards("close")
 		return
 
+func AnimateLights(left: bool, right: bool) -> void:
+	if(not left and not right):
+		$Animations/Lights.play("default")
+		return
+	if(left):
+		$Animations/Lights.play("leftLights")
+		return
+	if(right):
+		$Animations/Lights.play("rightLights")
+		return
+
 func _on_left_door_btn_pressed():
 	isLeftDoorOn = not isLeftDoorOn
 	AnimateButtons(isLeftDoorOn, isLeftLightOn, $Buttons/LeftButtons/LeftBtnSprite)
@@ -68,15 +81,23 @@ func _on_left_door_btn_pressed():
 
 func _on_left_light_btn_pressed():
 	isLeftLightOn = not isLeftLightOn
+	if isRightLightOn:
+		isRightLightOn = false
+		AnimateButtons(isRightDoorOn, isRightLightOn, $Buttons/RightButtons/RightBtnSprite)
 	AnimateButtons(isLeftDoorOn, isLeftLightOn, $Buttons/LeftButtons/LeftBtnSprite)
+	AnimateLights(isLeftLightOn, isRightLightOn)
 
 
 func _on_right_door_btn_pressed():
 	isRightDoorOn = not isRightDoorOn
-	AnimateButtons(isRightDoorOn, isLeftLightOn, $Buttons/RightButtons/RightBtnSprite)
+	AnimateButtons(isRightDoorOn, isRightLightOn, $Buttons/RightButtons/RightBtnSprite)
 	AnimateDoors(isRightDoorOn, $Doors/RigthDoor)
 
 
 func _on_right_light_btn_pressed():
 	isRightLightOn = not isRightLightOn
+	if isLeftLightOn:
+		isLeftLightOn = false
+		AnimateButtons(isLeftDoorOn, isLeftLightOn, $Buttons/LeftButtons/LeftBtnSprite)
 	AnimateButtons(isRightDoorOn, isRightLightOn, $Buttons/RightButtons/RightBtnSprite)
+	AnimateLights(isLeftLightOn, isRightLightOn)
