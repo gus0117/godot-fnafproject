@@ -9,6 +9,7 @@ var isLeftDoorOn: bool = false
 var isLeftLightOn: bool = false
 var isRightDoorOn: bool = false
 var isRightLightOn: bool = false
+var isShowMonitor: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -76,6 +77,14 @@ func AnimateLights(left: bool, right: bool) -> void:
 		$Animations/Lights.play("rightLights")
 		return
 
+func AnimateMonitor(show: bool) -> void:
+	if show:
+		#$Camera/Monitor.visible = true
+		$Camera/Monitor/MonitorAnimation.play("MonitorIn")
+	else:
+		$Camera/Monitor/MonitorAnimation.play_backwards("MonitorIn")
+		
+
 func _on_left_door_btn_pressed():
 	isLeftDoorOn = not isLeftDoorOn
 	AnimateButtons(isLeftDoorOn, isLeftLightOn, $Buttons/LeftButtons/LeftBtnSprite)
@@ -104,3 +113,12 @@ func _on_right_light_btn_pressed():
 		AnimateButtons(isLeftDoorOn, isLeftLightOn, $Buttons/LeftButtons/LeftBtnSprite)
 	AnimateButtons(isRightDoorOn, isRightLightOn, $Buttons/RightButtons/RightBtnSprite)
 	AnimateLights(isLeftLightOn, isRightLightOn)
+
+
+func _on_switch_camera_mouse_entered():
+	isShowMonitor = !isShowMonitor
+	AnimateMonitor(isShowMonitor)
+
+
+func _on_monitor_animation_animation_finished():
+	pass

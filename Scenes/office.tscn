@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://dthkptvdt54gs"]
+[gd_scene load_steps=71 format=3 uid="uid://dthkptvdt54gs"]
 
 [ext_resource type="Script" path="res://Scripts/office.gd" id="1_5tqkb"]
 [ext_resource type="Texture2D" uid="uid://c6mfy3qjpepqy" path="res://Assets/Office/1-OFFICE.png" id="1_hvo1u"]
@@ -48,12 +48,57 @@
 [ext_resource type="Texture2D" uid="uid://ctjocthsdaemm" path="res://Assets/Office/Lights/RIGHT_LIGHT.png" id="45_1aejx"]
 [ext_resource type="AudioStream" uid="uid://c64e4jhf4vl82" path="res://Assets/SoundsFX/ambience2.wav" id="45_75k2v"]
 [ext_resource type="AudioStream" uid="uid://c1a0f7gvs01h7" path="res://Assets/SoundsFX/Buzz_Fan_Florescent2.wav" id="46_kicku"]
+[ext_resource type="Texture2D" uid="uid://cxjxx8r16s3hb" path="res://Assets/GUI/0-FLIP.png" id="49_fch8p"]
+[ext_resource type="Texture2D" uid="uid://dfitj4r0c7k2s" path="res://Assets/Monitor/1.png" id="50_d4kvd"]
+[ext_resource type="Texture2D" uid="uid://dbawtmm1vucbw" path="res://Assets/Monitor/2.png" id="51_8wijx"]
+[ext_resource type="Texture2D" uid="uid://bumacotihvtts" path="res://Assets/Monitor/3.png" id="52_w4xgg"]
+[ext_resource type="Texture2D" uid="uid://c78ojo7332im1" path="res://Assets/Monitor/4.png" id="53_n7r1d"]
+[ext_resource type="Texture2D" uid="uid://d3tslq6o7dg6p" path="res://Assets/Monitor/5.png" id="54_qdwt3"]
+[ext_resource type="Texture2D" uid="uid://iednndx17yfl" path="res://Assets/Monitor/6.png" id="55_cs33p"]
+[ext_resource type="Texture2D" uid="uid://2wdisg8wi5ht" path="res://Assets/Monitor/7.png" id="56_sea8f"]
+[ext_resource type="Texture2D" uid="uid://cvk16knvu8efe" path="res://Assets/Monitor/8.png" id="57_oejnv"]
+[ext_resource type="Texture2D" uid="uid://8hmas1q5n005" path="res://Assets/Monitor/9.png" id="58_1vxyi"]
+[ext_resource type="Texture2D" uid="uid://irqd4wrnx7ae" path="res://Assets/Monitor/10.png" id="59_mgge7"]
+[ext_resource type="Texture2D" uid="uid://bialwu53p30q4" path="res://Assets/Monitor/11.png" id="60_3ldhe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uuyub"]
 size = Vector2(516, 735)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c45i5"]
 size = Vector2(494, 733)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eeo6b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_hvo1u")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_31nnv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_hvo1u")
+}],
+"loop": true,
+"name": &"leftLights",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("45_1aejx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_hvo1u")
+}],
+"loop": true,
+"name": &"rightLights",
+"speed": 20.0
+}]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_whb1e"]
 animations = [{
@@ -266,37 +311,48 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_eeo6b"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ojr68"]
+size = Vector2(596, 44)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ogihh"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_hvo1u")
+"texture": ExtResource("50_d4kvd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_8wijx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_w4xgg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_n7r1d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_qdwt3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_cs33p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_sea8f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_oejnv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_1vxyi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_mgge7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_3ldhe")
 }],
 "loop": false,
-"name": &"default",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("3_31nnv")
-}, {
-"duration": 1.0,
-"texture": ExtResource("1_hvo1u")
-}],
-"loop": true,
-"name": &"leftLights",
-"speed": 20.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("45_1aejx")
-}, {
-"duration": 1.0,
-"texture": ExtResource("1_hvo1u")
-}],
-"loop": true,
-"name": &"rightLights",
-"speed": 20.0
+"name": &"MonitorIn",
+"speed": 15.0
 }]
 
 [node name="Office" type="Node2D"]
@@ -323,12 +379,15 @@ visible = false
 position = Vector2(629, 359)
 texture = ExtResource("1_hvo1u")
 
-[node name="Camera" type="Node2D" parent="."]
-position = Vector2(642, 359)
+[node name="Animations" type="Node2D" parent="."]
+position = Vector2(629, 359)
 
-[node name="Camera2D" type="Camera2D" parent="Camera"]
+[node name="Lights" type="AnimatedSprite2D" parent="Animations"]
+sprite_frames = SubResource("SpriteFrames_eeo6b")
+autoplay = "default"
+frame_progress = 1.0
 
-[node name="Fan" type="Node" parent="."]
+[node name="Fan" type="Node2D" parent="."]
 
 [node name="FanAnimation" type="AnimatedSprite2D" parent="Fan"]
 position = Vector2(677, 400)
@@ -337,7 +396,7 @@ animation = &"turnon"
 autoplay = "turnon"
 frame_progress = 0.902382
 
-[node name="Doors" type="Node" parent="."]
+[node name="Doors" type="Node2D" parent="."]
 
 [node name="LeftDoor" type="AnimatedSprite2D" parent="Doors"]
 position = Vector2(15, 358)
@@ -351,7 +410,7 @@ sprite_frames = SubResource("SpriteFrames_nmmo6")
 animation = &"open"
 autoplay = "open"
 
-[node name="Buttons" type="Node" parent="."]
+[node name="Buttons" type="Node2D" parent="."]
 
 [node name="LeftButtons" type="Node2D" parent="Buttons"]
 
@@ -408,13 +467,30 @@ volume_db = -13.117
 stream = ExtResource("46_kicku")
 volume_db = -24.36
 
-[node name="Animations" type="Node2D" parent="."]
-position = Vector2(629, 359)
+[node name="Camera" type="Node2D" parent="."]
+position = Vector2(642, 359)
 
-[node name="Lights" type="AnimatedSprite2D" parent="Animations"]
-sprite_frames = SubResource("SpriteFrames_eeo6b")
-autoplay = "default"
-frame_progress = 1.0
+[node name="Camera2D" type="Camera2D" parent="Camera"]
+
+[node name="GUI" type="Node2D" parent="Camera"]
+position = Vector2(-642, -359)
+
+[node name="SwitchCamera" type="Area2D" parent="Camera/GUI"]
+position = Vector2(605, 662)
+
+[node name="ColliderSwitch" type="CollisionShape2D" parent="Camera/GUI/SwitchCamera"]
+position = Vector2(2, 1)
+shape = SubResource("RectangleShape2D_ojr68")
+
+[node name="SpriteSwitch" type="Sprite2D" parent="Camera/GUI/SwitchCamera"]
+texture = ExtResource("49_fch8p")
+
+[node name="Monitor" type="Node2D" parent="Camera"]
+position = Vector2(-32, 72)
+
+[node name="MonitorAnimation" type="AnimatedSprite2D" parent="Camera/Monitor"]
+sprite_frames = SubResource("SpriteFrames_ogihh")
+animation = &"MonitorIn"
 
 [connection signal="mouse_entered" from="Sides/LeftSide" to="." method="_on_left_side_mouse_entered"]
 [connection signal="mouse_exited" from="Sides/LeftSide" to="." method="_on_left_side_mouse_exited"]
@@ -424,3 +500,5 @@ frame_progress = 1.0
 [connection signal="pressed" from="Buttons/LeftButtons/LeftLightBtn" to="." method="_on_left_light_btn_pressed"]
 [connection signal="pressed" from="Buttons/RightButtons/RightDoorBtn" to="." method="_on_right_door_btn_pressed"]
 [connection signal="pressed" from="Buttons/RightButtons/RightLightBtn" to="." method="_on_right_light_btn_pressed"]
+[connection signal="mouse_entered" from="Camera/GUI/SwitchCamera" to="." method="_on_switch_camera_mouse_entered"]
+[connection signal="animation_finished" from="Camera/Monitor/MonitorAnimation" to="." method="_on_monitor_animation_animation_finished"]
