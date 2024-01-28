@@ -1,0 +1,202 @@
+[gd_scene load_steps=34 format=3 uid="uid://dfc47tn1r1slp"]
+
+[ext_resource type="Texture2D" uid="uid://cyi1xdkg63igj" path="res://Assets/Camera/Stage/1-STAGE.png" id="1_cyfs5"]
+[ext_resource type="Script" path="res://Scripts/monitor_scene.gd" id="1_ur5ph"]
+[ext_resource type="Texture2D" uid="uid://fckfoskif4b1" path="res://Assets/Camera/Stage/1-STAGE_ALL.png" id="2_w0mu3"]
+[ext_resource type="Texture2D" uid="uid://cdgke6qjb0e1i" path="res://Assets/Camera/Stage/1-STAGE_BONNIE.png" id="3_1hp6a"]
+[ext_resource type="Texture2D" uid="uid://x5o5bug14em2" path="res://Assets/Camera/Stage/1-STAGE_BONNIE_CHICA.png" id="4_6agao"]
+[ext_resource type="Texture2D" uid="uid://dw2m2uhybt0fo" path="res://Assets/Camera/Stage/1-STAGE_CHICA.png" id="5_2igap"]
+[ext_resource type="Texture2D" uid="uid://bn7acfwju6vv2" path="res://Assets/Camera/Stage/1-STAGE_FREDDY_LOOKING.png" id="6_a8n4k"]
+[ext_resource type="Texture2D" uid="uid://b4ysy34cg4ueu" path="res://Assets/Camera/Stage/1-STAGE_LOOKING.png" id="7_qi2v4"]
+[ext_resource type="Texture2D" uid="uid://dra78vk2lr1w1" path="res://Assets/Camera/Noise/1.png" id="9_bjrg2"]
+[ext_resource type="Texture2D" uid="uid://bm280vljavt6n" path="res://Assets/Camera/Noise/2.png" id="10_gbtxu"]
+[ext_resource type="Texture2D" uid="uid://dm7j0worjtj6i" path="res://Assets/Camera/Noise/3.png" id="11_nok4h"]
+[ext_resource type="Texture2D" uid="uid://bt08f1omxhdbp" path="res://Assets/Camera/Noise/4.png" id="12_ogcpr"]
+[ext_resource type="Texture2D" uid="uid://v1pboaxhojpg" path="res://Assets/Camera/Noise/5.png" id="13_5m2ew"]
+[ext_resource type="Texture2D" uid="uid://cvi2pfanlvwte" path="res://Assets/Camera/Noise/6.png" id="14_kj4y0"]
+[ext_resource type="Texture2D" uid="uid://oapi0w0cadat" path="res://Assets/Camera/Noise/7.png" id="15_2411k"]
+[ext_resource type="Texture2D" uid="uid://cmy00ni1714mi" path="res://Assets/Camera/Buttons/1-MAP2.png" id="16_oxsvv"]
+[ext_resource type="Texture2D" uid="uid://bekg7njbeobq2" path="res://Assets/Camera/Buttons/1-MAP.png" id="17_bpvxn"]
+[ext_resource type="Texture2D" uid="uid://ditcx53bm3jwd" path="res://Assets/Camera/Static/1.png" id="18_ehar5"]
+[ext_resource type="Texture2D" uid="uid://ekyl2cdcrlrh" path="res://Assets/Camera/Static/2.png" id="19_k7kdb"]
+[ext_resource type="Texture2D" uid="uid://bluuo4w7ll8pt" path="res://Assets/Camera/Static/3.png" id="20_wp3cb"]
+[ext_resource type="Texture2D" uid="uid://dwko814wnsamb" path="res://Assets/Camera/Static/4.png" id="21_vsfc8"]
+[ext_resource type="Texture2D" uid="uid://djkkguyleal36" path="res://Assets/Camera/Static/5.png" id="22_11nrw"]
+[ext_resource type="Texture2D" uid="uid://1n2qul5crvc6" path="res://Assets/Camera/Static/6.png" id="23_8c5x1"]
+[ext_resource type="Texture2D" uid="uid://bdtfo7a6nh264" path="res://Assets/Camera/Static/7.png" id="24_plwgd"]
+[ext_resource type="Texture2D" uid="uid://c0w8nhfyhe62r" path="res://Assets/Camera/Static/8.png" id="25_35b1g"]
+[ext_resource type="Texture2D" uid="uid://c0r577etyf60o" path="res://Assets/Camera/Buttons/CAM_PRESSED1 (animation or stopped).png" id="26_np27s"]
+[ext_resource type="Texture2D" uid="uid://b28p5v87iwefa" path="res://Assets/Camera/Buttons/CAM_PRESSED2 (switch animation sequence).png" id="27_5i3gf"]
+[ext_resource type="Texture2D" uid="uid://dgs875j8qtvua" path="res://Assets/Camera/Buttons/1-CAM 1A.png" id="28_25bkg"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ewqjp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_cyfs5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_w0mu3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_1hp6a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_6agao")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2igap")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_a8n4k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_qi2v4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xd8b1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_bjrg2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_gbtxu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_nok4h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ogcpr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_5m2ew")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_kj4y0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_2411k")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rdl4r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_ehar5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_k7kdb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_wp3cb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_vsfc8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_11nrw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_8c5x1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_plwgd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_35b1g")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_713v3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_oxsvv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_bpvxn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pv3y5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("26_np27s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_5i3gf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="MonitorScene" type="Node2D"]
+script = ExtResource("1_ur5ph")
+
+[node name="Stage" type="Node2D" parent="."]
+position = Vector2(629, 359)
+
+[node name="States" type="AnimatedSprite2D" parent="Stage"]
+sprite_frames = SubResource("SpriteFrames_ewqjp")
+
+[node name="Camera" type="Node2D" parent="."]
+position = Vector2(640, 360)
+
+[node name="Camera2D" type="Camera2D" parent="Camera"]
+
+[node name="Noise" type="AnimatedSprite2D" parent="Camera"]
+visible = false
+modulate = Color(1, 1, 1, 0.160784)
+position = Vector2(-1, 1)
+sprite_frames = SubResource("SpriteFrames_xd8b1")
+frame = 6
+frame_progress = 1.0
+
+[node name="Static" type="AnimatedSprite2D" parent="Camera"]
+modulate = Color(1, 1, 1, 0.219608)
+sprite_frames = SubResource("SpriteFrames_rdl4r")
+autoplay = "default"
+frame_progress = 0.228655
+
+[node name="Buttons" type="Node2D" parent="Camera"]
+position = Vector2(-640, -360)
+
+[node name="Map" type="AnimatedSprite2D" parent="Camera/Buttons"]
+position = Vector2(1021, 465)
+sprite_frames = SubResource("SpriteFrames_713v3")
+autoplay = "default"
+
+[node name="btn_cam1a" type="Node2D" parent="Camera/Buttons"]
+position = Vector2(949, 309)
+
+[node name="btn" type="AnimatedSprite2D" parent="Camera/Buttons/btn_cam1a"]
+sprite_frames = SubResource("SpriteFrames_pv3y5")
+
+[node name="spr_cam1a" type="Sprite2D" parent="Camera/Buttons/btn_cam1a"]
+visible = false
+texture = ExtResource("28_25bkg")
+
+[node name="btn_cam1a" type="Button" parent="Camera/Buttons/btn_cam1a"]
+offset_left = -30.0
+offset_top = -15.0
+offset_right = 24.0
+offset_bottom = 16.0
+toggle_mode = true
+text = "Cam 1A"
