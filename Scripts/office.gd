@@ -77,8 +77,11 @@ func AnimateLights(left: bool, right: bool) -> void:
 		$Animations/Lights.play("rightLights")
 		return
 
-func AnimateMonitor(show: bool) -> void:
-	if show:
+func AnimateMonitor() -> void:
+	if $Camera/Monitor/MonitorAnimation.is_playing():
+		return
+	isShowMonitor = !isShowMonitor
+	if isShowMonitor:
 		#$Camera/Monitor.visible = true
 		$Camera/Monitor/MonitorAnimation.play("MonitorIn")
 	else:
@@ -116,9 +119,10 @@ func _on_right_light_btn_pressed():
 
 
 func _on_switch_camera_mouse_entered():
-	isShowMonitor = !isShowMonitor
-	AnimateMonitor(isShowMonitor)
+	AnimateMonitor()
 
 
 func _on_monitor_animation_animation_finished():
+	if isShowMonitor:
+		get_tree().change_scene_to_file("res://Scenes/monitor_scene.tscn")
 	pass
