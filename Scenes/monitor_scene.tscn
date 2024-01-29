@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://dfc47tn1r1slp"]
+[gd_scene load_steps=36 format=3 uid="uid://dfc47tn1r1slp"]
 
 [ext_resource type="Texture2D" uid="uid://cyi1xdkg63igj" path="res://Assets/Camera/Stage/1-STAGE.png" id="1_cyfs5"]
 [ext_resource type="Script" path="res://Scripts/monitor_scene.gd" id="1_ur5ph"]
@@ -131,6 +131,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0f6gg"]
+bg_color = Color(0.458824, 0.564706, 0.992157, 0)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jlmxw"]
 bg_color = Color(0.415686, 0.415686, 0.415686, 1)
 border_width_left = 1
@@ -156,12 +159,14 @@ border_color = Color(1, 1, 1, 1)
 [sub_resource type="Theme" id="Theme_faqyn"]
 Button/font_sizes/font_size = 12
 Button/fonts/font = null
+Button/styles/focus = SubResource("StyleBoxFlat_0f6gg")
 Button/styles/hover = SubResource("StyleBoxFlat_jlmxw")
 Button/styles/normal = SubResource("StyleBoxFlat_plubx")
 Button/styles/pressed = SubResource("StyleBoxFlat_slied")
 
 [node name="MonitorScene" type="Node2D"]
 script = ExtResource("1_ur5ph")
+btnGroup = ExtResource("26_4e801")
 
 [node name="Stage" type="Node2D" parent="."]
 position = Vector2(629, 359)

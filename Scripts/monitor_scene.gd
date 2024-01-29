@@ -2,13 +2,14 @@ extends Node2D
 
 # Decide the direction to move
 var moveToLeft : bool = false
-var cameraSpeed : int = 1
+var cameraSpeed : int = 2
 
 @export var btnGroup : ButtonGroup
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	var buttons: Array[BaseButton] = btnGroup.get_buttons()
+	buttons[0].button_pressed = true
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
