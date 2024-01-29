@@ -25,6 +25,7 @@ window/handheld/orientation=1
 
 folder_colors={
 "res://Assets/": "blue",
+"res://Resources/": "purple",
 "res://Scenes/": "green",
 "res://Scripts/": "yellow"
 }

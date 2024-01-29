@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://dfc47tn1r1slp"]
+[gd_scene load_steps=35 format=3 uid="uid://dfc47tn1r1slp"]
 
 [ext_resource type="Texture2D" uid="uid://cyi1xdkg63igj" path="res://Assets/Camera/Stage/1-STAGE.png" id="1_cyfs5"]
 [ext_resource type="Script" path="res://Scripts/monitor_scene.gd" id="1_ur5ph"]
@@ -25,9 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://1n2qul5crvc6" path="res://Assets/Camera/Static/6.png" id="23_8c5x1"]
 [ext_resource type="Texture2D" uid="uid://bdtfo7a6nh264" path="res://Assets/Camera/Static/7.png" id="24_plwgd"]
 [ext_resource type="Texture2D" uid="uid://c0w8nhfyhe62r" path="res://Assets/Camera/Static/8.png" id="25_35b1g"]
-[ext_resource type="Texture2D" uid="uid://c0r577etyf60o" path="res://Assets/Camera/Buttons/CAM_PRESSED1 (animation or stopped).png" id="26_np27s"]
-[ext_resource type="Texture2D" uid="uid://b28p5v87iwefa" path="res://Assets/Camera/Buttons/CAM_PRESSED2 (switch animation sequence).png" id="27_5i3gf"]
-[ext_resource type="Texture2D" uid="uid://dgs875j8qtvua" path="res://Assets/Camera/Buttons/1-CAM 1A.png" id="28_25bkg"]
+[ext_resource type="ButtonGroup" uid="uid://djfi2bi7t4hnf" path="res://Resources/cam_buttons.tres" id="26_4e801"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ewqjp"]
 animations = [{
@@ -133,19 +131,34 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_pv3y5"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("26_np27s")
-}, {
-"duration": 1.0,
-"texture": ExtResource("27_5i3gf")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jlmxw"]
+bg_color = Color(0.415686, 0.415686, 0.415686, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_plubx"]
+bg_color = Color(0.415686, 0.415686, 0.415686, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_slied"]
+bg_color = Color(0.113725, 0.796078, 0.470588, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="Theme" id="Theme_faqyn"]
+Button/font_sizes/font_size = 12
+Button/fonts/font = null
+Button/styles/hover = SubResource("StyleBoxFlat_jlmxw")
+Button/styles/normal = SubResource("StyleBoxFlat_plubx")
+Button/styles/pressed = SubResource("StyleBoxFlat_slied")
 
 [node name="MonitorScene" type="Node2D"]
 script = ExtResource("1_ur5ph")
@@ -186,17 +199,175 @@ autoplay = "default"
 [node name="btn_cam1a" type="Node2D" parent="Camera/Buttons"]
 position = Vector2(949, 309)
 
-[node name="btn" type="AnimatedSprite2D" parent="Camera/Buttons/btn_cam1a"]
-sprite_frames = SubResource("SpriteFrames_pv3y5")
-
-[node name="spr_cam1a" type="Sprite2D" parent="Camera/Buttons/btn_cam1a"]
-visible = false
-texture = ExtResource("28_25bkg")
-
 [node name="btn_cam1a" type="Button" parent="Camera/Buttons/btn_cam1a"]
-offset_left = -30.0
-offset_top = -15.0
-offset_right = 24.0
-offset_bottom = 16.0
+offset_left = -23.0
+offset_top = -18.0
+offset_right = 23.0
+offset_bottom = 18.0
+theme = SubResource("Theme_faqyn")
 toggle_mode = true
-text = "Cam 1A"
+button_group = ExtResource("26_4e801")
+text = "Cam 
+1A"
+text_overrun_behavior = 1
+clip_text = true
+
+[node name="btn_cam1b" type="Node2D" parent="Camera/Buttons"]
+position = Vector2(933, 360)
+
+[node name="btn_cam1b" type="Button" parent="Camera/Buttons/btn_cam1b"]
+offset_left = -23.0
+offset_top = -18.0
+offset_right = 23.0
+offset_bottom = 18.0
+theme = SubResource("Theme_faqyn")
+toggle_mode = true
+button_group = ExtResource("26_4e801")
+text = "Cam 
+1B"
+text_overrun_behavior = 1
+clip_text = true
+
+[node name="btn_cam1c" type="Node2D" parent="Camera/Buttons"]
+position = Vector2(902, 437)
+
+[node name="btn_cam1c" type="Button" parent="Camera/Buttons/btn_cam1c"]
+offset_left = -23.0
+offset_top = -18.0
+offset_right = 23.0
+offset_bottom = 18.0
+theme = SubResource("Theme_faqyn")
+toggle_mode = true
+button_group = ExtResource("26_4e801")
+text = "Cam 
+1C"
+text_overrun_behavior = 1
+clip_text = true
+
+[node name="btn_cam2a" type="Node2D" parent="Camera/Buttons"]
+position = Vector2(958, 575)
+
+[node name="btn_cam2a" type="Button" parent="Camera/Buttons/btn_cam2a"]
+offset_left = -23.0
+offset_top = -18.0
+offset_right = 23.0
+offset_bottom = 18.0
+theme = SubResource("Theme_faqyn")
+toggle_mode = true
+button_group = ExtResource("26_4e801")
+text = "Cam 
+2A"
+text_overrun_behavior = 1
+clip_text = true
+
+[node name="btn_cam2b" type="Node2D" parent="Camera/Buttons"]
+position = Vector2(958, 615)
+
+[node name="btn_cam2b" type="Button" parent="Camera/Buttons/btn_cam2b"]
+offset_left = -23.0
+offset_top = -18.0
+offset_right = 23.0
+offset_bottom = 18.0
+theme = SubResource("Theme_faqyn")
+toggle_mode = true
+button_group = ExtResource("26_4e801")
+text = "Cam 
+2B"
+text_overrun_behavior = 1
+clip_text = true
+
+[node name="btn_cam3" type="Node2D" parent="Camera/Buttons"]
+position = Vector2(874, 534)
+
+[node name="btn_cam3" type="Button" parent="Camera/Buttons/btn_cam3"]
+offset_left = -23.0
+offset_top = -18.0
+offset_right = 23.0
+offset_bottom = 18.0
+theme = SubResource("Theme_faqyn")
+toggle_mode = true
+button_group = ExtResource("26_4e801")
+text = "Cam 
+3"
+text_overrun_behavior = 1
+clip_text = true
+
+[node name="btn_cam4a" type="Node2D" parent="Camera/Buttons"]
+position = Vector2(1046, 575)
+
+[node name="btn_cam4a" type="Button" parent="Camera/Buttons/btn_cam4a"]
+offset_left = -23.0
+offset_top = -18.0
+offset_right = 23.0
+offset_bottom = 18.0
+theme = SubResource("Theme_faqyn")
+toggle_mode = true
+button_group = ExtResource("26_4e801")
+text = "Cam 
+4A"
+text_overrun_behavior = 1
+clip_text = true
+
+[node name="btn_cam4b" type="Node2D" parent="Camera/Buttons"]
+position = Vector2(1046, 615)
+
+[node name="btn_cam4b" type="Button" parent="Camera/Buttons/btn_cam4b"]
+offset_left = -23.0
+offset_top = -18.0
+offset_right = 23.0
+offset_bottom = 18.0
+theme = SubResource("Theme_faqyn")
+toggle_mode = true
+button_group = ExtResource("26_4e801")
+text = "Cam 
+4B"
+text_overrun_behavior = 1
+clip_text = true
+
+[node name="btn_cam5" type="Node2D" parent="Camera/Buttons"]
+position = Vector2(833, 389)
+
+[node name="btn_cam5" type="Button" parent="Camera/Buttons/btn_cam5"]
+offset_left = -23.0
+offset_top = -18.0
+offset_right = 23.0
+offset_bottom = 18.0
+theme = SubResource("Theme_faqyn")
+toggle_mode = true
+button_group = ExtResource("26_4e801")
+text = "Cam 
+5"
+text_overrun_behavior = 1
+clip_text = true
+
+[node name="btn_cam6" type="Node2D" parent="Camera/Buttons"]
+position = Vector2(1161, 529)
+
+[node name="btn_cam6" type="Button" parent="Camera/Buttons/btn_cam6"]
+offset_left = -23.0
+offset_top = -18.0
+offset_right = 23.0
+offset_bottom = 18.0
+theme = SubResource("Theme_faqyn")
+toggle_mode = true
+button_group = ExtResource("26_4e801")
+text = "Cam 
+6"
+text_overrun_behavior = 1
+clip_text = true
+
+[node name="btn_cam7" type="Node2D" parent="Camera/Buttons"]
+position = Vector2(1160, 394)
+
+[node name="btn_cam7" type="Button" parent="Camera/Buttons/btn_cam7"]
+offset_left = -23.0
+offset_top = -18.0
+offset_right = 23.0
+offset_bottom = 18.0
+theme = SubResource("Theme_faqyn")
+toggle_mode = true
+button_group = ExtResource("26_4e801")
+text = "Cam 
+7"
+text_overrun_behavior = 1
+clip_text = true
