@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://bup45h687jmri"]
+
+[ext_resource type="PackedScene" uid="uid://dthkptvdt54gs" path="res://Scenes/office.tscn" id="1_4g7ve"]
+[ext_resource type="Script" path="res://Scripts/SceneManager.gd" id="1_66c10"]
+[ext_resource type="PackedScene" uid="uid://dfc47tn1r1slp" path="res://Scenes/monitor_scene.tscn" id="2_dxknc"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_rcvhk"]
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_66c10")
+
+[node name="Office" parent="." instance=ExtResource("1_4g7ve")]
+
+[node name="MonitorScene" parent="." node_paths=PackedStringArray("officeScene") instance=ExtResource("2_dxknc")]
+position = Vector2(0, 871)
+btnGroup = SubResource("ButtonGroup_rcvhk")
+officeScene = NodePath("../Office")

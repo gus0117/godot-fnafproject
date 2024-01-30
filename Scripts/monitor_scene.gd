@@ -3,8 +3,10 @@ extends Node2D
 # Decide the direction to move
 var moveToLeft : bool = false
 var cameraSpeed : int = 2
+var isCameraEnabled : bool = true
 
 @export var btnGroup : ButtonGroup
+@export var officeScene : Node2D
 @onready var currentRoom : AnimatedSprite2D = $Rooms/Stage
 
 # Dictionary of referecenses, than referece all rooms
@@ -33,6 +35,10 @@ func ButtonPressed(camName : String) -> void:
 	if(roomDictionary.has(camName)):
 		SwitchRoom(roomDictionary[camName])
 
+func EnableMonitorCam(enable: bool) -> void:
+	#isCameraEnabled = enable
+	$Camera/Camera2D.make_current()
+
 func SwitchRoom(newRoom : AnimatedSprite2D) -> void:
 	if(newRoom == null):
 		return
@@ -46,10 +52,18 @@ func SwitchRoom(newRoom : AnimatedSprite2D) -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	MoveCameraAuto()
+	if isCameraEnabled:
+		MoveCameraAuto()
 
 # Move the camera auto.
 func MoveCameraAuto() -> void:
 	if $Camera.position.x < 473 or $Camera.position.x > 780:
 		cameraSpeed = -cameraSpeed
 	$Camera.position.x += cameraSpeed
+
+
+func _on_switch_office_mouse_entered():
+	get_parent().SwitchToOffice()
+	pass
+	#Global.SwitchToOffice()
+	#get_parent().SwitchToOffice()

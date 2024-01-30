@@ -10,16 +10,19 @@ var isLeftLightOn: bool = false
 var isRightDoorOn: bool = false
 var isRightLightOn: bool = false
 var isShowMonitor: bool = false
+var isCameraEnable: bool = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$SFX/Ambience.play()
 	$SFX/FanSFX.play()
+	#print("Enter scene")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	MoveCamera(isLeftSide, isRightSide)
+	if isCameraEnable:
+		MoveCamera(isLeftSide, isRightSide)
 
 
 func _on_left_side_mouse_entered():
@@ -40,6 +43,10 @@ func MoveCamera(isLeft: bool, isRight: bool) -> void:
 		$Camera.position.x -= CAM_SPEED
 	elif(isRight and $Camera.position.x < 780):
 		$Camera.position.x += CAM_SPEED
+
+func EnableOfficeCam(enable : bool) -> void:
+	#isCameraEnable = enable
+	$Camera/Camera2D.make_current()
 
 func AnimateButtons(door: bool, light: bool, sprite: AnimatedSprite2D) -> void:
 	if not door and not light:
@@ -124,5 +131,8 @@ func _on_switch_camera_mouse_entered():
 
 func _on_monitor_animation_animation_finished():
 	if isShowMonitor:
-		get_tree().change_scene_to_file("res://Scenes/monitor_scene.tscn")
+		print("Cambiar a monitor")
+		#Switch node
+		#Global.SwitchToMonitor()
+		get_parent().SwitchToMonitor()
 	pass

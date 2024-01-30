@@ -1,4 +1,4 @@
-[gd_scene load_steps=91 format=3 uid="uid://dfc47tn1r1slp"]
+[gd_scene load_steps=93 format=3 uid="uid://dfc47tn1r1slp"]
 
 [ext_resource type="Texture2D" uid="uid://cyi1xdkg63igj" path="res://Assets/Camera/Stage/1-STAGE.png" id="1_cyfs5"]
 [ext_resource type="Script" path="res://Scripts/monitor_scene.gd" id="1_ur5ph"]
@@ -71,6 +71,7 @@
 [ext_resource type="Texture2D" uid="uid://dqf5hiqiscq25" path="res://Assets/Camera/EastHall/10-EAST_HALL_NEWS3.png" id="52_8sp87"]
 [ext_resource type="Texture2D" uid="uid://c63vv7ubtfyht" path="res://Assets/Camera/EastHall/10-EAST_HALL_NEWS4.png" id="53_hicg0"]
 [ext_resource type="Texture2D" uid="uid://bbulbvrk6oo4d" path="res://Assets/Camera/EastHall/10-EAST_HALL_NEWS.png" id="54_4nh1o"]
+[ext_resource type="Texture2D" uid="uid://cxjxx8r16s3hb" path="res://Assets/GUI/0-FLIP.png" id="72_f537v"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ewqjp"]
 animations = [{
@@ -424,6 +425,9 @@ Button/styles/hover = SubResource("StyleBoxFlat_jlmxw")
 Button/styles/normal = SubResource("StyleBoxFlat_plubx")
 Button/styles/pressed = SubResource("StyleBoxFlat_slied")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5o4nt"]
+size = Vector2(594, 40)
+
 [node name="MonitorScene" type="Node2D"]
 script = ExtResource("1_ur5ph")
 btnGroup = ExtResource("26_4e801")
@@ -697,3 +701,17 @@ text = "Cam
 text_overrun_behavior = 1
 clip_text = true
 metadata/cameraName = "cam7"
+
+[node name="GUI" type="Node2D" parent="Camera"]
+
+[node name="SwitchOffice" type="Area2D" parent="Camera/GUI"]
+position = Vector2(-40, 295)
+
+[node name="AreaCollision" type="CollisionShape2D" parent="Camera/GUI/SwitchOffice"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_5o4nt")
+
+[node name="Sprite2D" type="Sprite2D" parent="Camera/GUI/SwitchOffice"]
+texture = ExtResource("72_f537v")
+
+[connection signal="mouse_entered" from="Camera/GUI/SwitchOffice" to="." method="_on_switch_office_mouse_entered"]
