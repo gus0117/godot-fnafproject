@@ -11,6 +11,7 @@ var isRightDoorOn: bool = false
 var isRightLightOn: bool = false
 var isShowMonitor: bool = false
 var isCameraEnable: bool = true
+var isSwitchEnable: bool
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -47,6 +48,10 @@ func MoveCamera(isLeft: bool, isRight: bool) -> void:
 func EnableOfficeCam(enable : bool) -> void:
 	#isCameraEnable = enable
 	$Camera/Camera2D.make_current()
+
+func EnableSwitchCamBtn(enable: bool) -> void:
+	$Camera/GUI/SwitchCamera/SpriteSwitch.visible = enable
+	isSwitchEnable = enable
 
 func AnimateButtons(door: bool, light: bool, sprite: AnimatedSprite2D) -> void:
 	if not door and not light:
@@ -126,7 +131,8 @@ func _on_right_light_btn_pressed():
 
 
 func _on_switch_camera_mouse_entered():
-	AnimateMonitor()
+	if isSwitchEnable:
+		AnimateMonitor()
 
 
 func _on_monitor_animation_animation_finished():
@@ -136,3 +142,8 @@ func _on_monitor_animation_animation_finished():
 		#Global.SwitchToMonitor()
 		get_parent().SwitchToMonitor()
 	pass
+
+
+func _on_switch_camera_mouse_exited():
+	if not isSwitchEnable:
+		EnableSwitchCamBtn(true)

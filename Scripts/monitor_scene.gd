@@ -4,6 +4,7 @@ extends Node2D
 var moveToLeft : bool = false
 var cameraSpeed : int = 2
 var isCameraEnabled : bool = true
+var isSwitchEnabled : bool
 
 @export var btnGroup : ButtonGroup
 @export var officeScene : Node2D
@@ -39,6 +40,10 @@ func EnableMonitorCam(enable: bool) -> void:
 	#isCameraEnabled = enable
 	$Camera/Camera2D.make_current()
 
+func EnableSwitchCamBtn(enable: bool) -> void:
+	$Camera/GUI/SwitchOffice/Sprite2D.visible = enable
+	isSwitchEnabled = enable
+
 func SwitchRoom(newRoom : AnimatedSprite2D) -> void:
 	if(newRoom == null):
 		return
@@ -63,7 +68,11 @@ func MoveCameraAuto() -> void:
 
 
 func _on_switch_office_mouse_entered():
-	get_parent().SwitchToOffice()
-	pass
-	#Global.SwitchToOffice()
-	#get_parent().SwitchToOffice()
+	if isSwitchEnabled:
+		get_parent().SwitchToOffice()
+
+
+
+func _on_switch_office_mouse_exited():
+	if not isSwitchEnabled:
+		EnableSwitchCamBtn(true)

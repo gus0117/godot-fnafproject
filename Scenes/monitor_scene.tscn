@@ -715,3 +715,4 @@ shape = SubResource("RectangleShape2D_5o4nt")
 texture = ExtResource("72_f537v")
 
 [connection signal="mouse_entered" from="Camera/GUI/SwitchOffice" to="." method="_on_switch_office_mouse_entered"]
+[connection signal="mouse_exited" from="Camera/GUI/SwitchOffice" to="." method="_on_switch_office_mouse_exited"]

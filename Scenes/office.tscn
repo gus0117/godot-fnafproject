@@ -501,4 +501,5 @@ animation = &"MonitorIn"
 [connection signal="pressed" from="Buttons/RightButtons/RightDoorBtn" to="." method="_on_right_door_btn_pressed"]
 [connection signal="pressed" from="Buttons/RightButtons/RightLightBtn" to="." method="_on_right_light_btn_pressed"]
 [connection signal="mouse_entered" from="Camera/GUI/SwitchCamera" to="." method="_on_switch_camera_mouse_entered"]
+[connection signal="mouse_exited" from="Camera/GUI/SwitchCamera" to="." method="_on_switch_camera_mouse_exited"]
 [connection signal="animation_finished" from="Camera/Monitor/MonitorAnimation" to="." method="_on_monitor_animation_animation_finished"]
