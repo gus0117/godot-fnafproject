@@ -473,6 +473,7 @@ position = Vector2(642, 359)
 [node name="Camera2D" type="Camera2D" parent="Camera"]
 
 [node name="GUI" type="Node2D" parent="Camera"]
+visible = false
 position = Vector2(-642, -359)
 
 [node name="SwitchCamera" type="Area2D" parent="Camera/GUI"]

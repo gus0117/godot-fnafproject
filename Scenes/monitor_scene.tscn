@@ -703,6 +703,7 @@ clip_text = true
 metadata/cameraName = "cam7"
 
 [node name="GUI" type="Node2D" parent="Camera"]
+visible = false
 
 [node name="SwitchOffice" type="Area2D" parent="Camera/GUI"]
 position = Vector2(-40, 295)

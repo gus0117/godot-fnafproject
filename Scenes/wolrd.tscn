@@ -1,10 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://bup45h687jmri"]
+[gd_scene load_steps=7 format=3 uid="uid://bup45h687jmri"]
 
 [ext_resource type="PackedScene" uid="uid://dthkptvdt54gs" path="res://Scenes/office.tscn" id="1_4g7ve"]
 [ext_resource type="Script" path="res://Scripts/SceneManager.gd" id="1_66c10"]
 [ext_resource type="PackedScene" uid="uid://dfc47tn1r1slp" path="res://Scenes/monitor_scene.tscn" id="2_dxknc"]
+[ext_resource type="Texture2D" uid="uid://cxjxx8r16s3hb" path="res://Assets/GUI/0-FLIP.png" id="4_ixws3"]
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_rcvhk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y5sq0"]
+size = Vector2(597, 42)
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_66c10")
@@ -15,3 +19,17 @@ script = ExtResource("1_66c10")
 position = Vector2(0, 871)
 btnGroup = SubResource("ButtonGroup_rcvhk")
 officeScene = NodePath("../Office")
+
+[node name="GUI" type="CanvasLayer" parent="."]
+
+[node name="SwitchArea" type="Area2D" parent="GUI"]
+position = Vector2(641, 657)
+
+[node name="SwitchSprite" type="Sprite2D" parent="GUI/SwitchArea"]
+texture = ExtResource("4_ixws3")
+
+[node name="CollisionArea" type="CollisionShape2D" parent="GUI/SwitchArea"]
+position = Vector2(-0.5, 1)
+shape = SubResource("RectangleShape2D_y5sq0")
+
+[connection signal="mouse_entered" from="GUI/SwitchArea" to="." method="_on_switch_area_mouse_entered"]

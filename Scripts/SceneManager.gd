@@ -19,3 +19,7 @@ func SwitchToOffice() -> void :
 func SwitchToMonitor() -> void :
 	monitorScene.EnableMonitorCam(true)
 	monitorScene.EnableSwitchCamBtn(false)
+
+
+func _on_switch_area_mouse_entered():
+	officeScene.AnimateMonitor()
