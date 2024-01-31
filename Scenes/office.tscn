@@ -352,7 +352,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"MonitorIn",
-"speed": 15.0
+"speed": 25.0
 }]
 
 [node name="Office" type="Node2D"]
