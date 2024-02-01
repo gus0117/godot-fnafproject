@@ -137,8 +137,6 @@ func _on_switch_camera_mouse_entered():
 
 func _on_monitor_animation_animation_finished():
 	if isShowMonitor:
-		#Switch node
-		#Global.SwitchToMonitor()
 		get_parent().SwitchToMonitor()
 	pass
 

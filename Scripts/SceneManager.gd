@@ -6,6 +6,7 @@ class_name SceneManager
 @onready var monitorScene : Node2D = $MonitorScene
 
 var isEnabledToSwitchScn : bool = true
+var isMonitorScnNext : bool = true
 
 func _ready():
 	monitorScene.EnableMonitorCam(false)
@@ -13,19 +14,13 @@ func _ready():
 	pass
 
 func SwitchToOffice() -> void :
-	#Enabled scene cam
 	officeScene.EnableOfficeCam(true)
-	
-	#Enable to switch next scene
-	#officeScene.EnableSwitchCamBtn(false)
 	officeScene.AnimateMonitor()
+	isMonitorScnNext = true
 
 func SwitchToMonitor() -> void :
-	#Enabled scene cam
 	monitorScene.EnableMonitorCam(true)
-	
-	#Enable to switch next scene
-	#monitorScene.EnableSwitchCamBtn(false)
+	isMonitorScnNext = false
 
 func EnableToSwitchScn() -> void:
 	isEnabledToSwitchScn = true
@@ -33,9 +28,14 @@ func EnableToSwitchScn() -> void:
 func _on_switch_area_mouse_entered():
 	if not isEnabledToSwitchScn:
 		return
-	officeScene.AnimateMonitor()
+	if isMonitorScnNext:
+		officeScene.AnimateMonitor()
+	else:
+		SwitchToOffice()
 	isEnabledToSwitchScn = false
+	$GUI/SwitchArea/SwitchSprite.visible = false
 
 
 func _on_switch_area_mouse_exited():
-	print("Ready to switch")
+	isEnabledToSwitchScn = true
+	$GUI/SwitchArea/SwitchSprite.visible = true
