@@ -51,9 +51,24 @@ func SwitchRoom(newRoom : AnimatedSprite2D) -> void:
 	currentRoom.visible = false
 	currentRoom = newRoom
 	#Play sound
+	$SoundFX/CamBlip.play()
 	#Play animation noise
+	PlayNoise()
 	#Update label room_name
 
+func PlaySoundBG() -> void:
+	$SoundFX/MonitorBG.play()
+
+func PlayNoise() -> void:
+	$Camera/Noise.visible = true
+	$Camera/Noise.play("default")
+
+func StopNoise() -> void:
+	$Camera/Noise.visible = false
+	$Camera/Noise.stop()
+
+func StopSoundBG() -> void:
+	$SoundFX/MonitorBG.stop()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -66,13 +81,14 @@ func MoveCameraAuto() -> void:
 		cameraSpeed = -cameraSpeed
 	$Camera.position.x += cameraSpeed
 
-
 func _on_switch_office_mouse_entered():
 	if isSwitchEnabled:
 		get_parent().SwitchToOffice()
 
-
-
 func _on_switch_office_mouse_exited():
 	if not isSwitchEnabled:
 		EnableSwitchCamBtn(true)
+
+
+func _on_noise_animation_finished():
+	StopNoise()

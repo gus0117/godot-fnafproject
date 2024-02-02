@@ -14,6 +14,8 @@ func _ready():
 	pass
 
 func SwitchToOffice() -> void :
+	monitorScene.StopSoundBG()
+	monitorScene.StopNoise()
 	officeScene.EnableOfficeCam(true)
 	officeScene.AnimateMonitor()
 	isMonitorScnNext = true
@@ -21,6 +23,8 @@ func SwitchToOffice() -> void :
 func SwitchToMonitor() -> void :
 	monitorScene.EnableMonitorCam(true)
 	isMonitorScnNext = false
+	monitorScene.PlaySoundBG()
+	monitorScene.PlayNoise()
 
 func EnableToSwitchScn() -> void:
 	isEnabledToSwitchScn = true

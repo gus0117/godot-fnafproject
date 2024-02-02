@@ -32,5 +32,9 @@ texture = ExtResource("4_jbgj3")
 position = Vector2(-0.5, 1)
 shape = SubResource("RectangleShape2D_y5sq0")
 
+[node name="SoundFX" type="Node2D" parent="."]
+
+[node name="SwitchFX" type="AudioStreamPlayer2D" parent="SoundFX"]
+
 [connection signal="mouse_entered" from="GUI/SwitchArea" to="." method="_on_switch_area_mouse_entered"]
 [connection signal="mouse_exited" from="GUI/SwitchArea" to="." method="_on_switch_area_mouse_exited"]

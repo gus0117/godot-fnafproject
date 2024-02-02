@@ -1,4 +1,4 @@
-[gd_scene load_steps=93 format=3 uid="uid://dfc47tn1r1slp"]
+[gd_scene load_steps=95 format=3 uid="uid://dfc47tn1r1slp"]
 
 [ext_resource type="Texture2D" uid="uid://cyi1xdkg63igj" path="res://Assets/Camera/Stage/1-STAGE.png" id="1_cyfs5"]
 [ext_resource type="Script" path="res://Scripts/monitor_scene.gd" id="1_ur5ph"]
@@ -72,6 +72,8 @@
 [ext_resource type="Texture2D" uid="uid://c63vv7ubtfyht" path="res://Assets/Camera/EastHall/10-EAST_HALL_NEWS4.png" id="53_hicg0"]
 [ext_resource type="Texture2D" uid="uid://bbulbvrk6oo4d" path="res://Assets/Camera/EastHall/10-EAST_HALL_NEWS.png" id="54_4nh1o"]
 [ext_resource type="Texture2D" uid="uid://cxjxx8r16s3hb" path="res://Assets/GUI/0-FLIP.png" id="72_f537v"]
+[ext_resource type="AudioStream" uid="uid://2fowawmh2jer" path="res://Assets/SoundsFX/blip3.wav" id="73_0fhda"]
+[ext_resource type="AudioStream" uid="uid://vr038d0dcj4h" path="res://Assets/SoundsFX/CAMERA_VIDEO_LOA_60105303.wav" id="74_urkbv"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ewqjp"]
 animations = [{
@@ -343,7 +345,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"default",
-"speed": 10.0
+"speed": 15.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rdl4r"]
@@ -715,5 +717,14 @@ shape = SubResource("RectangleShape2D_5o4nt")
 [node name="Sprite2D" type="Sprite2D" parent="Camera/GUI/SwitchOffice"]
 texture = ExtResource("72_f537v")
 
+[node name="SoundFX" type="Node2D" parent="."]
+
+[node name="CamBlip" type="AudioStreamPlayer2D" parent="SoundFX"]
+stream = ExtResource("73_0fhda")
+
+[node name="MonitorBG" type="AudioStreamPlayer2D" parent="SoundFX"]
+stream = ExtResource("74_urkbv")
+
+[connection signal="animation_finished" from="Camera/Noise" to="." method="_on_noise_animation_finished"]
 [connection signal="mouse_entered" from="Camera/GUI/SwitchOffice" to="." method="_on_switch_office_mouse_entered"]
 [connection signal="mouse_exited" from="Camera/GUI/SwitchOffice" to="." method="_on_switch_office_mouse_exited"]
