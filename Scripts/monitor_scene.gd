@@ -26,17 +26,17 @@ var isSwitchEnabled : bool
 }
 
 var labelDictionary = {
-	"cam1a": "Stage Room",
-	"cam1b": "Room 1b",
-	"cam1c": "$Rooms/PirateCove",
-	"cam2a": "$Rooms/RestRoom",
-	"cam2b": "$Rooms/Backstage",
-	"cam3" : "$Rooms/WestHallCorner",
-	"cam4a": "$Rooms/EastHallCorner",
-	"cam4b": "$Rooms/SupplyRoom",
-	"cam5" : "$Rooms/WestHall",
-	"cam6" : "$Rooms/Disabled",
-	"cam7" : "$Rooms/EastHall"
+	"cam1a": "Show Stage",
+	"cam1b": "Dining Room",
+	"cam1c": "Pirate Cove",
+	"cam2a": "Rest Room",
+	"cam2b": "Backstage",
+	"cam3" : "W. Hall Corner",
+	"cam4a": "E. Hall Corner",
+	"cam4b": "Supply Room",
+	"cam5" : "West Hall",
+	"cam6" : "-Cam Disabled- \n*Audio Only*",
+	"cam7" : "East Hall"
 }
 
 # Called when the node enters the scene tree for the first time.
