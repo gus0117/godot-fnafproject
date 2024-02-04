@@ -1,4 +1,4 @@
-[gd_scene load_steps=95 format=3 uid="uid://dfc47tn1r1slp"]
+[gd_scene load_steps=96 format=3 uid="uid://dfc47tn1r1slp"]
 
 [ext_resource type="Texture2D" uid="uid://cyi1xdkg63igj" path="res://Assets/Camera/Stage/1-STAGE.png" id="1_cyfs5"]
 [ext_resource type="Script" path="res://Scripts/monitor_scene.gd" id="1_ur5ph"]
@@ -72,6 +72,7 @@
 [ext_resource type="Texture2D" uid="uid://c63vv7ubtfyht" path="res://Assets/Camera/EastHall/10-EAST_HALL_NEWS4.png" id="53_hicg0"]
 [ext_resource type="Texture2D" uid="uid://bbulbvrk6oo4d" path="res://Assets/Camera/EastHall/10-EAST_HALL_NEWS.png" id="54_4nh1o"]
 [ext_resource type="Texture2D" uid="uid://cxjxx8r16s3hb" path="res://Assets/GUI/0-FLIP.png" id="72_f537v"]
+[ext_resource type="FontFile" uid="uid://50m37pgs2ii1" path="res://Assets/Fonts/Minecraft.ttf" id="72_h4njd"]
 [ext_resource type="AudioStream" uid="uid://2fowawmh2jer" path="res://Assets/SoundsFX/blip3.wav" id="73_0fhda"]
 [ext_resource type="AudioStream" uid="uid://vr038d0dcj4h" path="res://Assets/SoundsFX/CAMERA_VIDEO_LOA_60105303.wav" id="74_urkbv"]
 
@@ -420,8 +421,8 @@ border_width_bottom = 1
 border_color = Color(1, 1, 1, 1)
 
 [sub_resource type="Theme" id="Theme_faqyn"]
-Button/font_sizes/font_size = 12
-Button/fonts/font = null
+Button/font_sizes/font_size = 15
+Button/fonts/font = ExtResource("72_h4njd")
 Button/styles/focus = SubResource("StyleBoxFlat_0f6gg")
 Button/styles/hover = SubResource("StyleBoxFlat_jlmxw")
 Button/styles/normal = SubResource("StyleBoxFlat_plubx")
@@ -513,12 +514,12 @@ frame_progress = 0.228655
 position = Vector2(-640, -360)
 
 [node name="Map" type="AnimatedSprite2D" parent="Camera/Buttons"]
-position = Vector2(1021, 465)
+position = Vector2(1021, 441)
 sprite_frames = SubResource("SpriteFrames_713v3")
 autoplay = "default"
 
 [node name="btn_cam1a" type="Node2D" parent="Camera/Buttons"]
-position = Vector2(949, 309)
+position = Vector2(949, 285)
 
 [node name="btn_cam1a" type="Button" parent="Camera/Buttons/btn_cam1a"]
 offset_left = -23.0
@@ -535,7 +536,7 @@ clip_text = true
 metadata/cameraName = "cam1a"
 
 [node name="btn_cam1b" type="Node2D" parent="Camera/Buttons"]
-position = Vector2(933, 360)
+position = Vector2(933, 336)
 
 [node name="btn_cam1b" type="Button" parent="Camera/Buttons/btn_cam1b"]
 offset_left = -23.0
@@ -552,7 +553,7 @@ clip_text = true
 metadata/cameraName = "cam1b"
 
 [node name="btn_cam1c" type="Node2D" parent="Camera/Buttons"]
-position = Vector2(902, 437)
+position = Vector2(902, 413)
 
 [node name="btn_cam1c" type="Button" parent="Camera/Buttons/btn_cam1c"]
 offset_left = -23.0
@@ -569,7 +570,7 @@ clip_text = true
 metadata/cameraName = "cam1c"
 
 [node name="btn_cam2a" type="Node2D" parent="Camera/Buttons"]
-position = Vector2(958, 575)
+position = Vector2(958, 551)
 
 [node name="btn_cam2a" type="Button" parent="Camera/Buttons/btn_cam2a"]
 offset_left = -23.0
@@ -586,7 +587,7 @@ clip_text = true
 metadata/cameraName = "cam2a"
 
 [node name="btn_cam2b" type="Node2D" parent="Camera/Buttons"]
-position = Vector2(958, 615)
+position = Vector2(958, 591)
 
 [node name="btn_cam2b" type="Button" parent="Camera/Buttons/btn_cam2b"]
 offset_left = -23.0
@@ -603,7 +604,7 @@ clip_text = true
 metadata/cameraName = "cam2b"
 
 [node name="btn_cam3" type="Node2D" parent="Camera/Buttons"]
-position = Vector2(874, 534)
+position = Vector2(874, 510)
 
 [node name="btn_cam3" type="Button" parent="Camera/Buttons/btn_cam3"]
 offset_left = -23.0
@@ -620,7 +621,7 @@ clip_text = true
 metadata/cameraName = "cam3"
 
 [node name="btn_cam4a" type="Node2D" parent="Camera/Buttons"]
-position = Vector2(1046, 575)
+position = Vector2(1046, 551)
 
 [node name="btn_cam4a" type="Button" parent="Camera/Buttons/btn_cam4a"]
 offset_left = -23.0
@@ -637,7 +638,7 @@ clip_text = true
 metadata/cameraName = "cam4a"
 
 [node name="btn_cam4b" type="Node2D" parent="Camera/Buttons"]
-position = Vector2(1046, 615)
+position = Vector2(1046, 591)
 
 [node name="btn_cam4b" type="Button" parent="Camera/Buttons/btn_cam4b"]
 offset_left = -23.0
@@ -654,7 +655,7 @@ clip_text = true
 metadata/cameraName = "cam4b"
 
 [node name="btn_cam5" type="Node2D" parent="Camera/Buttons"]
-position = Vector2(833, 389)
+position = Vector2(833, 365)
 
 [node name="btn_cam5" type="Button" parent="Camera/Buttons/btn_cam5"]
 offset_left = -23.0
@@ -671,7 +672,7 @@ clip_text = true
 metadata/cameraName = "cam5"
 
 [node name="btn_cam6" type="Node2D" parent="Camera/Buttons"]
-position = Vector2(1161, 529)
+position = Vector2(1161, 505)
 
 [node name="btn_cam6" type="Button" parent="Camera/Buttons/btn_cam6"]
 offset_left = -23.0
@@ -688,7 +689,7 @@ clip_text = true
 metadata/cameraName = "cam6"
 
 [node name="btn_cam7" type="Node2D" parent="Camera/Buttons"]
-position = Vector2(1160, 394)
+position = Vector2(1160, 370)
 
 [node name="btn_cam7" type="Button" parent="Camera/Buttons/btn_cam7"]
 offset_left = -23.0
@@ -703,6 +704,17 @@ text = "Cam
 text_overrun_behavior = 1
 clip_text = true
 metadata/cameraName = "cam7"
+
+[node name="Label" type="Label" parent="Camera/Buttons"]
+offset_left = 911.0
+offset_top = 207.0
+offset_right = 1089.0
+offset_bottom = 242.0
+theme_override_fonts/font = ExtResource("72_h4njd")
+theme_override_font_sizes/font_size = 30
+text = "Room name"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="GUI" type="Node2D" parent="Camera"]
 visible = false
