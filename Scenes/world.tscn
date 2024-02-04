@@ -1,14 +1,35 @@
-[gd_scene load_steps=7 format=3 uid="uid://bup45h687jmri"]
+[gd_scene load_steps=12 format=3 uid="uid://bup45h687jmri"]
 
 [ext_resource type="Script" path="res://Scripts/SceneManager.gd" id="1_d2tgu"]
 [ext_resource type="PackedScene" uid="uid://dthkptvdt54gs" path="res://Scenes/office.tscn" id="2_a6shv"]
 [ext_resource type="PackedScene" uid="uid://dfc47tn1r1slp" path="res://Scenes/monitor_scene.tscn" id="3_f2e2p"]
 [ext_resource type="Texture2D" uid="uid://cxjxx8r16s3hb" path="res://Assets/GUI/0-FLIP.png" id="4_jbgj3"]
+[ext_resource type="FontFile" uid="uid://50m37pgs2ii1" path="res://Assets/Fonts/Minecraft.ttf" id="5_ofw75"]
+[ext_resource type="Texture2D" uid="uid://xyh8jkqwerxp" path="res://Assets/GUI/Battery/5.png" id="6_28xd5"]
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_rcvhk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y5sq0"]
 size = Vector2(597, 42)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q4sf0"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.780392, 0.780392, 0.780392, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ghayv"]
+bg_color = Color(0.137255, 0.72549, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_bottom = 1
+corner_detail = 4
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o0nh8"]
+texture = ExtResource("6_28xd5")
+axis_stretch_horizontal = 1
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_d2tgu")
@@ -32,9 +53,99 @@ texture = ExtResource("4_jbgj3")
 position = Vector2(-0.5, 1)
 shape = SubResource("RectangleShape2D_y5sq0")
 
+[node name="Battery" type="Control" parent="GUI"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 31.0
+offset_top = 513.0
+offset_right = 221.0
+offset_bottom = 572.0
+
+[node name="BatteryLabel" type="Label" parent="GUI/Battery"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 1.0
+offset_right = 70.0
+offset_bottom = 24.0
+theme_override_fonts/font = ExtResource("5_ofw75")
+theme_override_font_sizes/font_size = 15
+text = "Battery"
+vertical_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="GUI/Battery"]
+layout_mode = 0
+offset_left = 81.0
+offset_top = -1.0
+offset_right = 125.0
+offset_bottom = 26.0
+theme_override_fonts/font = ExtResource("5_ofw75")
+theme_override_styles/background = SubResource("StyleBoxFlat_q4sf0")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ghayv")
+step = 1.0
+value = 49.0
+rounded = true
+
+[node name="UsageLabel" type="Label" parent="GUI/Battery"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 42.0
+offset_right = 69.0
+offset_bottom = 65.0
+theme_override_fonts/font = ExtResource("5_ofw75")
+theme_override_font_sizes/font_size = 15
+text = "Usage"
+vertical_alignment = 1
+
+[node name="Usage" type="ProgressBar" parent="GUI/Battery"]
+layout_mode = 0
+offset_left = 79.0
+offset_top = 42.0
+offset_right = 181.0
+offset_bottom = 69.0
+theme_override_styles/fill = SubResource("StyleBoxTexture_o0nh8")
+step = 20.0
+value = 100.0
+rounded = true
+show_percentage = false
+
+[node name="Clock" type="Control" parent="GUI"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1103.0
+offset_top = 40.0
+offset_right = 1143.0
+offset_bottom = 80.0
+
+[node name="Night" type="Label" parent="GUI/Clock"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = -5.0
+offset_right = 118.0
+offset_bottom = 50.0
+theme_override_fonts/font = ExtResource("5_ofw75")
+theme_override_font_sizes/font_size = 25
+text = "Night 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ClockLabel" type="Label" parent="GUI/Clock"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 45.0
+offset_right = 113.0
+offset_bottom = 71.0
+theme_override_fonts/font = ExtResource("5_ofw75")
+theme_override_font_sizes/font_size = 25
+text = "12:00 AM"
+
 [node name="SoundFX" type="Node2D" parent="."]
 
 [node name="SwitchFX" type="AudioStreamPlayer2D" parent="SoundFX"]
 
+[node name="NightTimer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
 [connection signal="mouse_entered" from="GUI/SwitchArea" to="." method="_on_switch_area_mouse_entered"]
 [connection signal="mouse_exited" from="GUI/SwitchArea" to="." method="_on_switch_area_mouse_exited"]
+[connection signal="timeout" from="NightTimer" to="." method="_on_night_timer_timeout"]

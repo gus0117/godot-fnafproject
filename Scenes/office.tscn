@@ -1,12 +1,14 @@
-[gd_scene load_steps=71 format=3 uid="uid://dthkptvdt54gs"]
+[gd_scene load_steps=73 format=3 uid="uid://dthkptvdt54gs"]
 
 [ext_resource type="Script" path="res://Scripts/office.gd" id="1_5tqkb"]
 [ext_resource type="Texture2D" uid="uid://c6mfy3qjpepqy" path="res://Assets/Office/1-OFFICE.png" id="1_hvo1u"]
 [ext_resource type="Texture2D" uid="uid://cvq0c3ewideja" path="res://Assets/Office/Lights/LEFT_LIGHT.png" id="3_31nnv"]
 [ext_resource type="Texture2D" uid="uid://dewrbbl34mxfk" path="res://Assets/Office/Fan/1.png" id="3_j8ce7"]
+[ext_resource type="Texture2D" uid="uid://cdb2c3v8wanv5" path="res://Assets/Office/Lights/1-OFFICE_BONNIE.png" id="4_4cgad"]
 [ext_resource type="Texture2D" uid="uid://h3qvirqbjucu" path="res://Assets/Office/Fan/1_fix.png" id="4_jl2vj"]
 [ext_resource type="Texture2D" uid="uid://bhbs20d2sok0n" path="res://Assets/Office/Fan/2.png" id="4_x57by"]
 [ext_resource type="Texture2D" uid="uid://dioa5fipociiq" path="res://Assets/Office/Fan/3.png" id="5_ojba0"]
+[ext_resource type="Texture2D" uid="uid://62slbjrw8o4t" path="res://Assets/Office/Lights/1-OFFICE_CHICA.png" id="6_26802"]
 [ext_resource type="Texture2D" uid="uid://cv3dunxaw62el" path="res://Assets/Office/Doors/Left/14.png" id="7_li0wn"]
 [ext_resource type="Texture2D" uid="uid://ckl3q15gs073x" path="res://Assets/Office/Doors/Left/1.png" id="7_lle6w"]
 [ext_resource type="Texture2D" uid="uid://c1jxhlb3kkhip" path="res://Assets/Office/Doors/Left/2.png" id="8_kbnbt"]
@@ -90,6 +92,17 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("1_hvo1u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_4cgad")
+}],
+"loop": true,
+"name": &"leftLightsBonnie",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("45_1aejx")
 }, {
 "duration": 1.0,
@@ -97,6 +110,17 @@ animations = [{
 }],
 "loop": true,
 "name": &"rightLights",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_hvo1u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_26802")
+}],
+"loop": true,
+"name": &"rightLightsChica",
 "speed": 20.0
 }]
 
@@ -385,7 +409,6 @@ position = Vector2(629, 359)
 [node name="Lights" type="AnimatedSprite2D" parent="Animations"]
 sprite_frames = SubResource("SpriteFrames_eeo6b")
 autoplay = "default"
-frame_progress = 1.0
 
 [node name="Fan" type="Node2D" parent="."]
 

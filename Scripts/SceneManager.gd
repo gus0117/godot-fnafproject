@@ -11,7 +11,7 @@ var isMonitorScnNext : bool = true
 func _ready():
 	monitorScene.EnableMonitorCam(false)
 	officeScene.EnableOfficeCam(true)
-	pass
+	$GUI/Clock/ClockLabel.text = Global.GetHourString()
 
 func SwitchToOffice() -> void :
 	monitorScene.StopSoundBG()
@@ -29,6 +29,7 @@ func SwitchToMonitor() -> void :
 func EnableToSwitchScn() -> void:
 	isEnabledToSwitchScn = true
 
+
 func _on_switch_area_mouse_entered():
 	if not isEnabledToSwitchScn:
 		return
@@ -43,3 +44,8 @@ func _on_switch_area_mouse_entered():
 func _on_switch_area_mouse_exited():
 	isEnabledToSwitchScn = true
 	$GUI/SwitchArea/SwitchSprite.visible = true
+
+
+func _on_night_timer_timeout():
+	Global.SetNextHour()
+	$GUI/Clock/ClockLabel.text = Global.GetHourString()
