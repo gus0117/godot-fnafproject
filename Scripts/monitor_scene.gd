@@ -25,16 +25,32 @@ var isSwitchEnabled : bool
 	"cam7" : $Rooms/EastHall
 }
 
+var labelDictionary = {
+	"cam1a": "Stage Room",
+	"cam1b": "Room 1b",
+	"cam1c": "$Rooms/PirateCove",
+	"cam2a": "$Rooms/RestRoom",
+	"cam2b": "$Rooms/Backstage",
+	"cam3" : "$Rooms/WestHallCorner",
+	"cam4a": "$Rooms/EastHallCorner",
+	"cam4b": "$Rooms/SupplyRoom",
+	"cam5" : "$Rooms/WestHall",
+	"cam6" : "$Rooms/Disabled",
+	"cam7" : "$Rooms/EastHall"
+}
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var buttons: Array[BaseButton] = btnGroup.get_buttons()
 	buttons[0].button_pressed = true
+	SetRoomName(labelDictionary["cam1a"])
 	for btn in btnGroup.get_buttons():
 		btn.connect("pressed", ButtonPressed.bind(btn.get_meta("cameraName")))
 
 func ButtonPressed(camName : String) -> void:
 	if(roomDictionary.has(camName)):
 		SwitchRoom(roomDictionary[camName])
+		SetRoomName(labelDictionary[camName])
 
 func EnableMonitorCam(enable: bool) -> void:
 	#isCameraEnabled = enable
@@ -54,7 +70,9 @@ func SwitchRoom(newRoom : AnimatedSprite2D) -> void:
 	$SoundFX/CamBlip.play()
 	#Play animation noise
 	PlayNoise()
-	#Update label room_name
+
+func SetRoomName(roomName : String) -> void:
+	$Camera/Buttons/Label.text = roomName
 
 func PlaySoundBG() -> void:
 	$SoundFX/MonitorBG.play()
