@@ -1,6 +1,6 @@
 extends Node2D
 
-const CAM_SPEED: float = 10
+const CAM_SPEED: float = 20
 
 var isLeftSide: bool = false
 var isRightSide: bool = false

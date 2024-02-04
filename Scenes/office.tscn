@@ -65,7 +65,7 @@
 size = Vector2(516, 735)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c45i5"]
-size = Vector2(494, 733)
+size = Vector2(536, 733)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_eeo6b"]
 animations = [{
@@ -371,7 +371,7 @@ shape = SubResource("RectangleShape2D_uuyub")
 
 [node name="Collider" type="CollisionShape2D" parent="Sides/RightSide"]
 visible = false
-position = Vector2(1183, 356.5)
+position = Vector2(1162, 356.5)
 shape = SubResource("RectangleShape2D_c45i5")
 
 [node name="Background" type="Sprite2D" parent="."]
