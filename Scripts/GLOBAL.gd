@@ -2,6 +2,8 @@ extends Node
 
 #GLOBAL VARS
 var currentHour : int = 12
+var currentNight : int = 1
+var batteryDecrese : float = 1
 
 #REFERENCES
 @export var monitorScene : PackedScene = preload("res://Scenes/monitor_scene.tscn")

@@ -83,7 +83,7 @@ animations = [{
 "texture": ExtResource("1_cyfs5")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_w0mu3")
+"texture": ExtResource("5_2igap")
 }, {
 "duration": 1.0,
 "texture": ExtResource("3_1hp6a")
@@ -92,7 +92,7 @@ animations = [{
 "texture": ExtResource("4_6agao")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_2igap")
+"texture": ExtResource("2_w0mu3")
 }, {
 "duration": 1.0,
 "texture": ExtResource("6_a8n4k")
@@ -488,6 +488,7 @@ sprite_frames = SubResource("SpriteFrames_vpsad")
 animation = &"state"
 
 [node name="Disabled" type="AnimatedSprite2D" parent="Rooms"]
+visible = false
 sprite_frames = SubResource("SpriteFrames_rad6e")
 animation = &"state"
 
