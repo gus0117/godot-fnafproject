@@ -144,3 +144,4 @@ func _on_monitor_animation_animation_finished():
 func _on_switch_camera_mouse_exited():
 	if not isSwitchEnable:
 		EnableSwitchCamBtn(true)
+

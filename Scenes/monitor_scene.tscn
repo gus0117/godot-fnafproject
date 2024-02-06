@@ -708,9 +708,9 @@ metadata/cameraName = "cam7"
 
 [node name="Label" type="Label" parent="Camera/Buttons"]
 offset_left = 911.0
-offset_top = 207.0
+offset_top = 181.0
 offset_right = 1089.0
-offset_bottom = 242.0
+offset_bottom = 216.0
 theme_override_fonts/font = ExtResource("72_h4njd")
 theme_override_font_sizes/font_size = 30
 text = "Room name"
