@@ -1,4 +1,4 @@
-[gd_scene load_steps=96 format=3 uid="uid://dfc47tn1r1slp"]
+[gd_scene load_steps=97 format=3 uid="uid://dfc47tn1r1slp"]
 
 [ext_resource type="Texture2D" uid="uid://cyi1xdkg63igj" path="res://Assets/Camera/Stage/1-STAGE.png" id="1_cyfs5"]
 [ext_resource type="Script" path="res://Scripts/monitor_scene.gd" id="1_ur5ph"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bn7acfwju6vv2" path="res://Assets/Camera/Stage/1-STAGE_FREDDY_LOOKING.png" id="6_a8n4k"]
 [ext_resource type="Texture2D" uid="uid://b4ysy34cg4ueu" path="res://Assets/Camera/Stage/1-STAGE_LOOKING.png" id="7_qi2v4"]
 [ext_resource type="Texture2D" uid="uid://dra78vk2lr1w1" path="res://Assets/Camera/Noise/1.png" id="9_bjrg2"]
+[ext_resource type="Script" path="res://Scripts/RoomController.gd" id="10_el3pl"]
 [ext_resource type="Texture2D" uid="uid://bm280vljavt6n" path="res://Assets/Camera/Noise/2.png" id="10_gbtxu"]
 [ext_resource type="Texture2D" uid="uid://cxtty02gs04hh" path="res://Assets/Camera/Dining/2-DINING_AREA.png" id="10_l18ke"]
 [ext_resource type="Texture2D" uid="uid://dm7j0worjtj6i" path="res://Assets/Camera/Noise/3.png" id="11_nok4h"]
@@ -138,13 +139,13 @@ animations = [{
 "texture": ExtResource("16_esqbf")
 }, {
 "duration": 1.0,
+"texture": ExtResource("19_v2a7y")
+}, {
+"duration": 1.0,
 "texture": ExtResource("17_ueagu")
 }, {
 "duration": 1.0,
 "texture": ExtResource("18_hfdf4")
-}, {
-"duration": 1.0,
-"texture": ExtResource("19_v2a7y")
 }, {
 "duration": 1.0,
 "texture": ExtResource("20_630i0")
@@ -218,10 +219,10 @@ animations = [{
 "texture": ExtResource("32_t6apr")
 }, {
 "duration": 1.0,
-"texture": ExtResource("33_1nutc")
+"texture": ExtResource("34_brwd5")
 }, {
 "duration": 1.0,
-"texture": ExtResource("34_brwd5")
+"texture": ExtResource("33_1nutc")
 }, {
 "duration": 1.0,
 "texture": ExtResource("35_05dc2")
@@ -441,56 +442,67 @@ position = Vector2(629, 359)
 [node name="Stage" type="AnimatedSprite2D" parent="Rooms"]
 sprite_frames = SubResource("SpriteFrames_ewqjp")
 animation = &"state"
+script = ExtResource("10_el3pl")
 
 [node name="Dining" type="AnimatedSprite2D" parent="Rooms"]
 visible = false
 sprite_frames = SubResource("SpriteFrames_wi1vx")
 animation = &"state"
+script = ExtResource("10_el3pl")
 
 [node name="PirateCove" type="AnimatedSprite2D" parent="Rooms"]
 visible = false
 sprite_frames = SubResource("SpriteFrames_5tx4q")
 animation = &"state"
+script = ExtResource("10_el3pl")
 
 [node name="RestRoom" type="AnimatedSprite2D" parent="Rooms"]
 visible = false
 sprite_frames = SubResource("SpriteFrames_hqt70")
 animation = &"state"
+script = ExtResource("10_el3pl")
 
 [node name="Backstage" type="AnimatedSprite2D" parent="Rooms"]
 visible = false
 sprite_frames = SubResource("SpriteFrames_w4own")
 animation = &"state"
+script = ExtResource("10_el3pl")
 
 [node name="WestHallCorner" type="AnimatedSprite2D" parent="Rooms"]
 visible = false
 sprite_frames = SubResource("SpriteFrames_kkgd5")
 animation = &"state"
+script = ExtResource("10_el3pl")
 
 [node name="EastHallCorner" type="AnimatedSprite2D" parent="Rooms"]
 visible = false
 sprite_frames = SubResource("SpriteFrames_48qj6")
 animation = &"state"
+script = ExtResource("10_el3pl")
 
 [node name="SupplyRoom" type="AnimatedSprite2D" parent="Rooms"]
 visible = false
 sprite_frames = SubResource("SpriteFrames_l4l4i")
 animation = &"state"
+script = ExtResource("10_el3pl")
 
 [node name="WestHall" type="AnimatedSprite2D" parent="Rooms"]
 visible = false
 sprite_frames = SubResource("SpriteFrames_ei22l")
 animation = &"state"
+script = ExtResource("10_el3pl")
 
 [node name="EastHall" type="AnimatedSprite2D" parent="Rooms"]
 visible = false
 sprite_frames = SubResource("SpriteFrames_vpsad")
 animation = &"state"
+script = ExtResource("10_el3pl")
 
 [node name="Disabled" type="AnimatedSprite2D" parent="Rooms"]
 visible = false
 sprite_frames = SubResource("SpriteFrames_rad6e")
 animation = &"state"
+script = ExtResource("10_el3pl")
 
 [node name="Camera" type="Node2D" parent="."]
 position = Vector2(640, 360)
