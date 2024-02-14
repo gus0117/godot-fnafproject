@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bup45h687jmri"]
+[gd_scene load_steps=14 format=3 uid="uid://bup45h687jmri"]
 
 [ext_resource type="Script" path="res://Scripts/SceneManager.gd" id="1_d2tgu"]
 [ext_resource type="PackedScene" uid="uid://dthkptvdt54gs" path="res://Scenes/office.tscn" id="2_a6shv"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://Scripts/BatteryManager.gd" id="5_82bm5"]
 [ext_resource type="FontFile" uid="uid://50m37pgs2ii1" path="res://Assets/Fonts/Minecraft.ttf" id="5_ofw75"]
 [ext_resource type="Texture2D" uid="uid://xyh8jkqwerxp" path="res://Assets/GUI/Battery/5.png" id="6_28xd5"]
+[ext_resource type="Script" path="res://Scripts/EnemyManager.gd" id="8_6rwjc"]
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_rcvhk"]
 
@@ -151,6 +152,9 @@ text = "12:00 AM"
 [node name="NightTimer" type="Timer" parent="."]
 wait_time = 10.0
 autostart = true
+
+[node name="EnemyManager" type="Node" parent="."]
+script = ExtResource("8_6rwjc")
 
 [connection signal="mouse_entered" from="GUI/SwitchArea" to="." method="_on_switch_area_mouse_entered"]
 [connection signal="mouse_exited" from="GUI/SwitchArea" to="." method="_on_switch_area_mouse_exited"]
