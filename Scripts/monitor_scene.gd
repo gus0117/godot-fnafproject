@@ -1,3 +1,4 @@
+class_name MonitorManager
 extends Node2D
 
 # Decide the direction to move
@@ -93,11 +94,23 @@ func _process(delta):
 	if isCameraEnabled:
 		MoveCameraAuto()
 
-# Move the camera auto.
+# Move the camera auto throw x-axis.
 func MoveCameraAuto() -> void:
 	if $Camera.position.x < 473 or $Camera.position.x > 780:
 		cameraSpeed = -cameraSpeed
 	$Camera.position.x += cameraSpeed
+
+#Change the animated sprite to certain frame
+func ChangeCamFrame(camName: String, frame: int) -> void:
+	if not roomDictionary.has(camName):
+		return
+	roomDictionary[camName].SwitchFrame(frame)
+
+#Callback to RoomController for reset animation sprite frame to default
+func ResetCamFrame(camName: String) -> void:
+	if not roomDictionary.has(camName):
+		return
+	roomDictionary[camName].ResetFrame()
 
 func _on_switch_office_mouse_entered():
 	if isSwitchEnabled:
