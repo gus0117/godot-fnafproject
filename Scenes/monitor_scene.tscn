@@ -1,4 +1,4 @@
-[gd_scene load_steps=97 format=3 uid="uid://dfc47tn1r1slp"]
+[gd_scene load_steps=104 format=3 uid="uid://dfc47tn1r1slp"]
 
 [ext_resource type="Texture2D" uid="uid://cyi1xdkg63igj" path="res://Assets/Camera/Stage/1-STAGE.png" id="1_cyfs5"]
 [ext_resource type="Script" path="res://Scripts/monitor_scene.gd" id="1_ur5ph"]
@@ -72,6 +72,13 @@
 [ext_resource type="Texture2D" uid="uid://dqf5hiqiscq25" path="res://Assets/Camera/EastHall/10-EAST_HALL_NEWS3.png" id="52_8sp87"]
 [ext_resource type="Texture2D" uid="uid://c63vv7ubtfyht" path="res://Assets/Camera/EastHall/10-EAST_HALL_NEWS4.png" id="53_hicg0"]
 [ext_resource type="Texture2D" uid="uid://bbulbvrk6oo4d" path="res://Assets/Camera/EastHall/10-EAST_HALL_NEWS.png" id="54_4nh1o"]
+[ext_resource type="Texture2D" uid="uid://cpv8x26bjea6w" path="res://Assets/Camera/Disable/1.png" id="56_5hbig"]
+[ext_resource type="Texture2D" uid="uid://j1g4jkipa26x" path="res://Assets/Camera/Disable/2.png" id="57_250t0"]
+[ext_resource type="Texture2D" uid="uid://c7msv6qieja1s" path="res://Assets/Camera/Disable/3.png" id="58_qh05b"]
+[ext_resource type="Texture2D" uid="uid://bfub4yh3a8jff" path="res://Assets/Camera/Disable/4.png" id="59_nmmc3"]
+[ext_resource type="Texture2D" uid="uid://buhkfujvojdnt" path="res://Assets/Camera/Disable/5.png" id="60_iuub4"]
+[ext_resource type="Texture2D" uid="uid://nl3q0j2e2fr7" path="res://Assets/Camera/Disable/6.png" id="61_l1ykh"]
+[ext_resource type="Texture2D" uid="uid://b0pyvykksk42r" path="res://Assets/Camera/Disable/7.png" id="62_ejc56"]
 [ext_resource type="Texture2D" uid="uid://cxjxx8r16s3hb" path="res://Assets/GUI/0-FLIP.png" id="72_f537v"]
 [ext_resource type="FontFile" uid="uid://50m37pgs2ii1" path="res://Assets/Fonts/Minecraft.ttf" id="72_h4njd"]
 [ext_resource type="AudioStream" uid="uid://2fowawmh2jer" path="res://Assets/SoundsFX/blip3.wav" id="73_0fhda"]
@@ -315,10 +322,31 @@ animations = [{
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rad6e"]
 animations = [{
-"frames": [],
-"loop": false,
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("56_5hbig")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_ejc56")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_qh05b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_l1ykh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_nmmc3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_250t0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_iuub4")
+}],
+"loop": true,
 "name": &"state",
-"speed": 5.0
+"speed": 15.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xd8b1"]
@@ -500,8 +528,11 @@ script = ExtResource("10_el3pl")
 
 [node name="Disabled" type="AnimatedSprite2D" parent="Rooms"]
 visible = false
+position = Vector2(1.00001, 0)
+scale = Vector2(1.24844, 1)
 sprite_frames = SubResource("SpriteFrames_rad6e")
 animation = &"state"
+autoplay = "state"
 script = ExtResource("10_el3pl")
 
 [node name="Camera" type="Node2D" parent="."]
