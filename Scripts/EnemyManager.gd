@@ -22,11 +22,13 @@ var bonnieDict = {
 }
 var bCurrentPos = {
 	"camName" : "cam1a",
-	"frame" : 0
+	"frame" : 0,
+	"animation" : "state"
 }
 var bNewPos = {
 	"camName" : "cam1a",
-	"frame" : 0
+	"frame" : 0,
+	"animation" : "state"
 }
 
 var chicaDict = {
@@ -66,14 +68,21 @@ func MoveBonnie() -> void:
 	var moved = true
 	match (bCurrentPos.camName):
 		"cam1a": 
-			#check if chica move after
 			bNewPos.camName = "cam1b"
 			bNewPos.frame = rng.randi_range(0,1);
+			#check if chica move after
+			if cCurrentPos.camName == "cam1a":
+				cCurrentPos.frame = 2
+			else:
+				cCurrentPos.frame = 3
 		_:
 			print("No hay camara relacionada")
 			moved = false
 	if moved:
-		SignalManager.bonnieSignal.emit(bCurrentPos, bNewPos)
+		var from = RoomState.new("", bCurrentPos.camName, bCurrentPos.animation, bCurrentPos.frame, false)
+		var to = RoomState.new("", bNewPos.camName, bNewPos.animation, bNewPos.frame, true)
+		
+		SignalManager.bonnieSignal.emit(from, to)
 	pass
 
 func _on_bonnie_timer_timeout():
