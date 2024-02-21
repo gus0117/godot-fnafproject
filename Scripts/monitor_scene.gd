@@ -43,7 +43,7 @@ var labelDictionary = {
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#Signal sub
-	SignalManager.bonnieSignal.connect(ChangeCamFrame)
+	SignalManager.bonnieSignal.connect(MoveEnemyTo)
 	#Init Button
 	var buttons: Array[BaseButton] = btnGroup.get_buttons()
 	buttons[0].button_pressed = true
@@ -97,6 +97,9 @@ func _process(delta):
 	if isCameraEnabled:
 		MoveCameraAuto()
 
+func MoveEnemyTo(from: RoomState, to: RoomState) -> void:
+	pass
+
 # Move the camera auto throw x-axis.
 func MoveCameraAuto() -> void:
 	if $Camera.position.x < 473 or $Camera.position.x > 780:
@@ -104,19 +107,10 @@ func MoveCameraAuto() -> void:
 	$Camera.position.x += cameraSpeed
 
 #Change the animated sprite to certain frame
-func ChangeCamFrame(camName: String, frame: int, from: String = "") -> void:
+func ChangeCamFrame(camName: String, frame: int) -> void:
 	if not roomDictionary.has(camName):
 		return
-	#Hide the change
-	if roomDictionary[camName] == currentRoom or roomDictionary[from] == currentRoom:
-		print("Cover")
-		$Rooms/Disabled.visible = true
-		await get_tree().create_timer(3.0).timeout
-		print("Time passed")
 	roomDictionary[camName].SwitchFrame(frame)
-	#If change is hidden, make visible again
-	if $Rooms/Disabled.visible == true and roomDictionary["cam6"] != currentRoom:
-		$Rooms/Disabled.visible = false
 
 #Callback to RoomController for reset animation sprite frame to default
 func ResetCamFrame(camName: String) -> void:

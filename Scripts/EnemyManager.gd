@@ -11,7 +11,7 @@ Bonnie
 	cam1a, cam1b
 """
 @export var monitorManager : MonitorManager
-
+var rng = RandomNumberGenerator.new()
 var bonnieDict = {
 	"cam1a": [0,1,6],
 	"cam1b": [1,2],
@@ -21,6 +21,10 @@ var bonnieDict = {
 	"cam5" : [1,2]
 }
 var bCurrentPos = {
+	"camName" : "cam1a",
+	"frame" : 0
+}
+var bNewPos = {
 	"camName" : "cam1a",
 	"frame" : 0
 }
@@ -55,20 +59,29 @@ var foxyDict = {
 	"cam2a": "West Hall"
 }
 
+func _ready():
+	SignalManager.bTimerSignal.connect(StartBonnieTimer)
+
 func MoveBonnie() -> void:
-	#1st Move: Quit from show stage
-	#monitorManager.ChangeCamFrame("cam1a",2)
-	#monitorManager.ChangeCamFrame("cam1b",1)
-	
-	#2nd Move: From dining to another location (except show stage)
+	var moved = true
+	match (bCurrentPos.camName):
+		"cam1a": 
+			#check if chica move after
+			bNewPos.camName = "cam1b"
+			bNewPos.frame = rng.randi_range(0,1);
+		_:
+			print("No hay camara relacionada")
+			moved = false
+	if moved:
+		SignalManager.bonnieSignal.emit(bCurrentPos, bNewPos)
 	pass
 
 func _on_bonnie_timer_timeout():
-	$BonnieTimer.stop()
-	if bCurrentPos.camName == "cam1a":
-		#It is first move
-		SignalManager.bonnieSignal.emit("cam1a", 2)
-		SignalManager.bonnieSignal.emit("cam1b", 1, "cam1a")
-	
-	#Reactivar el timer
+	print("Bonnie time")
+	MoveBonnie()
+
+func StartBonnieTimer() -> void:
+	bCurrentPos = bNewPos.duplicate()
+	print(bCurrentPos.camName)
 	$BonnieTimer.start(3)
+	#$BonnieTimer.stop()

@@ -1,9 +1,10 @@
-[gd_scene load_steps=104 format=3 uid="uid://dfc47tn1r1slp"]
+[gd_scene load_steps=105 format=3 uid="uid://dfc47tn1r1slp"]
 
 [ext_resource type="Texture2D" uid="uid://cyi1xdkg63igj" path="res://Assets/Camera/Stage/1-STAGE.png" id="1_cyfs5"]
 [ext_resource type="Script" path="res://Scripts/monitor_scene.gd" id="1_ur5ph"]
 [ext_resource type="Texture2D" uid="uid://fckfoskif4b1" path="res://Assets/Camera/Stage/1-STAGE_ALL.png" id="2_w0mu3"]
 [ext_resource type="Texture2D" uid="uid://cdgke6qjb0e1i" path="res://Assets/Camera/Stage/1-STAGE_BONNIE.png" id="3_1hp6a"]
+[ext_resource type="Texture2D" uid="uid://cxt1qqojm7rn8" path="res://Assets/Camera/black_screen.png" id="3_7prbk"]
 [ext_resource type="Texture2D" uid="uid://x5o5bug14em2" path="res://Assets/Camera/Stage/1-STAGE_BONNIE_CHICA.png" id="4_6agao"]
 [ext_resource type="Texture2D" uid="uid://dw2m2uhybt0fo" path="res://Assets/Camera/Stage/1-STAGE_CHICA.png" id="5_2igap"]
 [ext_resource type="Texture2D" uid="uid://bn7acfwju6vv2" path="res://Assets/Camera/Stage/1-STAGE_FREDDY_LOOKING.png" id="6_a8n4k"]
@@ -88,6 +89,14 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("3_7prbk")
+}],
+"loop": false,
+"name": &"black",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("1_cyfs5")
 }, {
 "duration": 1.0,
@@ -117,6 +126,14 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("3_7prbk")
+}],
+"loop": false,
+"name": &"black",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("10_l18ke")
 }, {
 "duration": 1.0,
@@ -143,6 +160,14 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("3_7prbk")
+}],
+"loop": true,
+"name": &"black",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("16_esqbf")
 }, {
 "duration": 1.0,
@@ -166,6 +191,14 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("3_7prbk")
+}],
+"loop": true,
+"name": &"black",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("21_hdf1m")
 }, {
 "duration": 1.0,
@@ -184,6 +217,14 @@ animations = [{
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_w4own"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_7prbk")
+}],
+"loop": false,
+"name": &"black",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("25_ydam1")
@@ -206,6 +247,14 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("3_7prbk")
+}],
+"loop": false,
+"name": &"black",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("29_2eq76")
 }, {
 "duration": 1.0,
@@ -221,6 +270,14 @@ animations = [{
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_48qj6"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_7prbk")
+}],
+"loop": false,
+"name": &"black",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("32_t6apr")
@@ -249,6 +306,14 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("3_7prbk")
+}],
+"loop": false,
+"name": &"black",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("38_fyjoa")
 }, {
 "duration": 1.0,
@@ -261,6 +326,14 @@ animations = [{
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ei22l"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_7prbk")
+}],
+"loop": false,
+"name": &"black",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("40_ae2o1")
@@ -287,6 +360,14 @@ animations = [{
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vpsad"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_7prbk")
+}],
+"loop": false,
+"name": &"black",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("46_e4q20")
@@ -322,6 +403,14 @@ animations = [{
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rad6e"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_7prbk")
+}],
+"loop": false,
+"name": &"black",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("56_5hbig")
@@ -531,8 +620,8 @@ visible = false
 position = Vector2(1.00001, 0)
 scale = Vector2(1.24844, 1)
 sprite_frames = SubResource("SpriteFrames_rad6e")
-animation = &"state"
-autoplay = "state"
+animation = &"black"
+autoplay = "black"
 script = ExtResource("10_el3pl")
 
 [node name="Camera" type="Node2D" parent="."]

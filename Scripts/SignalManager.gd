@@ -1,3 +1,6 @@
 extends Node
 
-signal bonnieSignal(camName: String, frame: int, from: String)
+signal bonnieSignal(from: RoomState, to: RoomState)
+
+#Bonnie timer signal
+signal bTimerSignal
