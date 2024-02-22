@@ -61,6 +61,8 @@ var foxy : Enemy = Enemy.new()
 
 func _ready():
 	SignalManager.bTimerSignal.connect(StartBonnieTimer)
+	var auxRoom = Room.new("Stage Show", "cam1a", AnimationState.new("state", 7, false), false)
+	bonnie.pos = auxRoom #To Do a duplicate object
 
 func MoveBonnie() -> void:
 	var moved = true
