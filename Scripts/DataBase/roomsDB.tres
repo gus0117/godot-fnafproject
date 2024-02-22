@@ -1,0 +1,116 @@
+[gd_resource type="JSON" format=3 uid="uid://bxhpc410f26w2"]
+
+[resource]
+data = {
+"rooms": [{
+"animation": {
+"amountFrames": 7.0,
+"currentFrame": 0.0,
+"isPlayable": false,
+"name": "state"
+},
+"camName": "cam1a",
+"isEmpty": false,
+"roomName": "Show Stage"
+}, {
+"animation": {
+"amountFrames": 6.0,
+"currentFrame": 0.0,
+"isPlayable": false,
+"name": "state"
+},
+"camName": "cam1b",
+"isEmpty": true,
+"roomName": "Dining Romm"
+}, {
+"animation": {
+"amountFrames": 4.0,
+"currentFrame": 0.0,
+"isPlayable": false,
+"name": "state"
+},
+"camName": "cam1c",
+"isEmpty": true,
+"roomName": "Pirate Cove"
+}, {
+"animation": {
+"amountFrames": 3.0,
+"currentFrame": 0.0,
+"isPlayable": false,
+"name": "state"
+},
+"camName": "cam2a",
+"isEmpty": true,
+"roomName": "West Hall Corner"
+}, {
+"animation": {
+"amountFrames": 6.0,
+"currentFrame": 0.0,
+"isPlayable": false,
+"name": "state"
+},
+"camName": "cam2b",
+"isEmpty": true,
+"roomName": "West Hall"
+}, {
+"animation": {
+"amountFrames": 2.0,
+"currentFrame": 0.0,
+"isPlayable": false,
+"name": "state"
+},
+"camName": "cam3",
+"isEmpty": true,
+"roomName": "Supply Room"
+}, {
+"animation": {
+"amountFrames": 6.0,
+"currentFrame": 0.0,
+"isPlayable": false,
+"name": "state"
+},
+"camName": "cam4a",
+"isEmpty": true,
+"roomName": "East Hall Corner"
+}, {
+"animation": {
+"amountFrames": 3.0,
+"currentFrame": 0.0,
+"isPlayable": false,
+"name": "state"
+},
+"camName": "cam4b",
+"isEmpty": true,
+"roomName": "East Hall"
+}, {
+"animation": {
+"amountFrames": 4.0,
+"currentFrame": 0.0,
+"isPlayable": false,
+"name": "state"
+},
+"camName": "cam5",
+"isEmpty": true,
+"roomName": "Backstage"
+}, {
+"animation": {
+"amountFrames": 1.0,
+"currentFrame": 0.0,
+"isPlayable": false,
+"name": "state"
+},
+"camName": "cam6",
+"isEmpty": true,
+"roomName": "Kitchen"
+}, {
+"animation": {
+"amountFrames": 4.0,
+"currentFrame": 0.0,
+"isPlayable": false,
+"name": "state"
+},
+"camName": "cam7",
+"isEmpty": true,
+"roomName": "Rest Room"
+}]
+}

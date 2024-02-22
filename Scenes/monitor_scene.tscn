@@ -1,4 +1,4 @@
-[gd_scene load_steps=105 format=3 uid="uid://dfc47tn1r1slp"]
+[gd_scene load_steps=99 format=3 uid="uid://dfc47tn1r1slp"]
 
 [ext_resource type="Texture2D" uid="uid://cyi1xdkg63igj" path="res://Assets/Camera/Stage/1-STAGE.png" id="1_cyfs5"]
 [ext_resource type="Script" path="res://Scripts/monitor_scene.gd" id="1_ur5ph"]
@@ -66,13 +66,7 @@
 [ext_resource type="Texture2D" uid="uid://cwuwubb2r4d5m" path="res://Assets/Camera/WestHall/9-WEST_HALL_POSTER_GLITCH.png" id="45_rfn1y"]
 [ext_resource type="Texture2D" uid="uid://dg8gqujv3pqiw" path="res://Assets/Camera/EastHall/10-EAST_HALL.png" id="46_e4q20"]
 [ext_resource type="Texture2D" uid="uid://d1s5p6hph0sms" path="res://Assets/Camera/EastHall/10-EAST_HALL_CHICA2.png" id="47_inghi"]
-[ext_resource type="Texture2D" uid="uid://cup1padvxks0w" path="res://Assets/Camera/EastHall/10-EAST_HALL_CHICA3.png" id="48_iwxoe"]
-[ext_resource type="Texture2D" uid="uid://dxsdcjj8d2wp0" path="res://Assets/Camera/EastHall/10-EAST_HALL_CHICA.png" id="49_tf6k7"]
 [ext_resource type="Texture2D" uid="uid://cpetywtfolqvx" path="res://Assets/Camera/EastHall/10-EAST_HALL_FREDDY.png" id="50_lpq6t"]
-[ext_resource type="Texture2D" uid="uid://bwsc64vw1v8s" path="res://Assets/Camera/EastHall/10-EAST_HALL_NEWS2.png" id="51_h7yve"]
-[ext_resource type="Texture2D" uid="uid://dqf5hiqiscq25" path="res://Assets/Camera/EastHall/10-EAST_HALL_NEWS3.png" id="52_8sp87"]
-[ext_resource type="Texture2D" uid="uid://c63vv7ubtfyht" path="res://Assets/Camera/EastHall/10-EAST_HALL_NEWS4.png" id="53_hicg0"]
-[ext_resource type="Texture2D" uid="uid://bbulbvrk6oo4d" path="res://Assets/Camera/EastHall/10-EAST_HALL_NEWS.png" id="54_4nh1o"]
 [ext_resource type="Texture2D" uid="uid://cpv8x26bjea6w" path="res://Assets/Camera/Disable/1.png" id="56_5hbig"]
 [ext_resource type="Texture2D" uid="uid://j1g4jkipa26x" path="res://Assets/Camera/Disable/2.png" id="57_250t0"]
 [ext_resource type="Texture2D" uid="uid://c7msv6qieja1s" path="res://Assets/Camera/Disable/3.png" id="58_qh05b"]
@@ -376,25 +370,7 @@ animations = [{
 "texture": ExtResource("47_inghi")
 }, {
 "duration": 1.0,
-"texture": ExtResource("48_iwxoe")
-}, {
-"duration": 1.0,
-"texture": ExtResource("49_tf6k7")
-}, {
-"duration": 1.0,
 "texture": ExtResource("50_lpq6t")
-}, {
-"duration": 1.0,
-"texture": ExtResource("51_h7yve")
-}, {
-"duration": 1.0,
-"texture": ExtResource("52_8sp87")
-}, {
-"duration": 1.0,
-"texture": ExtResource("53_hicg0")
-}, {
-"duration": 1.0,
-"texture": ExtResource("54_4nh1o")
 }],
 "loop": false,
 "name": &"state",
@@ -613,6 +589,8 @@ script = ExtResource("10_el3pl")
 visible = false
 sprite_frames = SubResource("SpriteFrames_vpsad")
 animation = &"state"
+frame = 2
+frame_progress = 1.0
 script = ExtResource("10_el3pl")
 
 [node name="Disabled" type="AnimatedSprite2D" parent="Rooms"]

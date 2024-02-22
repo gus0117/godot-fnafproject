@@ -59,35 +59,41 @@ var chica : Enemy = Enemy.new()
 var freddy : Enemy = Enemy.new()
 var foxy : Enemy = Enemy.new()
 
+var auxRoom : Room
+
 func _ready():
 	SignalManager.bTimerSignal.connect(StartBonnieTimer)
-	var auxRoom = Room.new("Stage Show", "cam1a", AnimationState.new("state", 7, false), false)
-	bonnie.pos = auxRoom #To Do a duplicate object
+	auxRoom = Room.new("Stage Show", "cam1a", AnimationState.new("state", 7, false), false)
+	bonnie.pos = Room.new("Stage Show", "cam1a", AnimationState.new("state", 7, false), false)
+	chica.pos = Room.new("Stage Show", "cam1a", AnimationState.new("state", 7, false), false)
+	freddy.pos = Room.new("Stage Show", "cam1a", AnimationState.new("state", 7, false), false)
 
-func MoveBonnie() -> void:
+func MoveEnemy(e : Enemy) -> void:
 	var moved = true
-	match (bCurrentPos.camName):
+	auxRoom = DuplicateRoom(e.pos)
+	match (e.pos.camName):
 		"cam1a": 
-			bNewPos.camName = "cam1b"
-			bNewPos.frame = rng.randi_range(0,1);
-			#check if chica move after
-			if cCurrentPos.camName == "cam1a":
-				cCurrentPos.frame = 2
-			else:
-				cCurrentPos.frame = 3
+			e.pos.name = "cam1b"
+			#e.pos.animation.frame = rng.randi_range(1,2);
+			e.pos.animation.frame = 1
+			#chica dont move yet
+			if chica.pos.camName == "cam1a":
+				auxRoom.animation.frame =  3
+			else: # Chica has moved
+				auxRoom.animation.frame = 4
 		_:
 			print("No hay camara relacionada")
 			moved = false
 	if moved:
-		var from = RoomState.new("", bCurrentPos.camName, bCurrentPos.animation, bCurrentPos.frame, false)
-		var to = RoomState.new("", bNewPos.camName, bNewPos.animation, bNewPos.frame, true)
-		
-		SignalManager.bonnieSignal.emit(from, to)
+		SignalManager.bonnieSignal.emit(auxRoom, e.pos)
 	pass
 
 func _on_bonnie_timer_timeout():
 	print("Bonnie time")
-	MoveBonnie()
+	MoveEnemy(bonnie)
+
+func DuplicateRoom(room : Room) -> Room:
+	return Room.new(room.name, room.camName, AnimationState.new(room.animation.name, room.animation.amountFrames, room.animation.isPlayable), room.isEmpty)
 
 func StartBonnieTimer() -> void:
 	bCurrentPos = bNewPos.duplicate()

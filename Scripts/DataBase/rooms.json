@@ -1,0 +1,125 @@
+{
+	"rooms": [
+	  {
+		"roomName": "Show Stage",
+		"camName": "cam1a",
+		"isEmpty": false,
+		"animation": {
+		  "name": "state",
+		  "amountFrames": 7,
+		  "currentFrame": 0,
+		  "isPlayable": false
+		}
+	  },
+	  {
+		"roomName": "Dining Romm",
+		"camName": "cam1b",
+		"isEmpty": true,
+		"animation": {
+		  "name": "state",
+		  "amountFrames": 6,
+		  "currentFrame": 0,
+		  "isPlayable": false
+		}
+	  },
+	  {
+		"roomName": "Pirate Cove",
+		"camName": "cam1c",
+		"isEmpty": true,
+		"animation": {
+		  "name": "state",
+		  "amountFrames": 4,
+		  "currentFrame": 0,
+		  "isPlayable": false
+		}
+	  },
+	  {
+		"roomName": "West Hall Corner",
+		"camName": "cam2a",
+		"isEmpty": true,
+		"animation": {
+		  "name": "state",
+		  "amountFrames": 3,
+		  "currentFrame": 0,
+		  "isPlayable": false
+		}
+	  },
+	  {
+		"roomName": "West Hall",
+		"camName": "cam2b",
+		"isEmpty": true,
+		"animation": {
+		  "name": "state",
+		  "amountFrames": 6,
+		  "currentFrame": 0,
+		  "isPlayable": false
+		}
+	  },
+	  {
+		"roomName": "Supply Room",
+		"camName": "cam3",
+		"isEmpty": true,
+		"animation": {
+		  "name": "state",
+		  "amountFrames": 2,
+		  "currentFrame": 0,
+		  "isPlayable": false
+		}
+	  },
+	  {
+		"roomName": "East Hall Corner",
+		"camName": "cam4a",
+		"isEmpty": true,
+		"animation": {
+		  "name": "state",
+		  "amountFrames": 6,
+		  "currentFrame": 0,
+		  "isPlayable": false
+		}
+	  },
+	  {
+		"roomName": "East Hall",
+		"camName": "cam4b",
+		"isEmpty": true,
+		"animation": {
+		  "name": "state",
+		  "amountFrames": 3,
+		  "currentFrame": 0,
+		  "isPlayable": false
+		}
+	  },
+	  {
+		"roomName": "Backstage",
+		"camName": "cam5",
+		"isEmpty": true,
+		"animation": {
+		  "name": "state",
+		  "amountFrames": 4,
+		  "currentFrame": 0,
+		  "isPlayable": false
+		}
+	  },
+	  {
+		"roomName": "Kitchen",
+		"camName": "cam6",
+		"isEmpty": true,
+		"animation": {
+		  "name": "state",
+		  "amountFrames": 1,
+		  "currentFrame": 0,
+		  "isPlayable": false
+		}
+	  },
+	  {
+		"roomName": "Rest Room",
+		"camName": "cam7",
+		"isEmpty": true,
+		"animation": {
+		  "name": "state",
+		  "amountFrames": 4,
+		  "currentFrame": 0,
+		  "isPlayable": false
+		}
+	  }
+	]
+  }

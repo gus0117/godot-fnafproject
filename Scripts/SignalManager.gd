@@ -1,6 +1,6 @@
 extends Node
 
-signal bonnieSignal(from: RoomState, to: RoomState)
+signal bonnieSignal(from: Room, to: Room)
 
 #Bonnie timer signal
 signal bTimerSignal

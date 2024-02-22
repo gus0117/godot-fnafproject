@@ -97,8 +97,11 @@ func _process(delta):
 	if isCameraEnabled:
 		MoveCameraAuto()
 
-func MoveEnemyTo(from: RoomState, to: RoomState) -> void:
-	pass
+func MoveEnemyTo(from: Room, to: Room) -> void:
+	ChangeCamFrame(from.camName, from.animation.name, from.animation.frame)
+	ChangeCamFrame(to.camName, to.animation.name, to.animation.frame)
+	print("Cambiando-..")
+	
 
 # Move the camera auto throw x-axis.
 func MoveCameraAuto() -> void:
@@ -107,10 +110,11 @@ func MoveCameraAuto() -> void:
 	$Camera.position.x += cameraSpeed
 
 #Change the animated sprite to certain frame
-func ChangeCamFrame(camName: String, frame: int) -> void:
+func ChangeCamFrame(camName: String, animation: String, frame: int) -> void:
 	if not roomDictionary.has(camName):
+		print("Cam name doesn't exist")
 		return
-	roomDictionary[camName].SwitchFrame(frame)
+	roomDictionary[camName].SwitchFrame(animation, frame)
 
 #Callback to RoomController for reset animation sprite frame to default
 func ResetCamFrame(camName: String) -> void:
