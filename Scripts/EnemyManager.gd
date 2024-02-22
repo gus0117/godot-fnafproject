@@ -2,16 +2,9 @@ extends Node
 
 class_name EnemyManager
 
-"""
-Night 1
-Bonnie and Chica attack, and Foxy if the player don't look 'Pirate Cove' Cam or is idle
-
-Bonnie 
-	-Path 1: Stage, Dining, West Hall, West Hall Corner, Left Door
-	cam1a, cam1b
-"""
 @export var monitorManager : MonitorManager
 var rng = RandomNumberGenerator.new()
+
 var bonnieDict = {
 	"cam1a": [0,1,6],
 	"cam1b": [1,2],
@@ -60,6 +53,11 @@ var foxyDict = {
 	"cam1c": "Pirate Cove",
 	"cam2a": "West Hall"
 }
+
+var bonnie : Enemy = Enemy.new()
+var chica : Enemy = Enemy.new()
+var freddy : Enemy = Enemy.new()
+var foxy : Enemy = Enemy.new()
 
 func _ready():
 	SignalManager.bTimerSignal.connect(StartBonnieTimer)
