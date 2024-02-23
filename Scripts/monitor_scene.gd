@@ -98,9 +98,13 @@ func _process(delta):
 		MoveCameraAuto()
 
 func MoveEnemyTo(from: Room, to: Room) -> void:
+	#print(from.animation.frame)
+	ChangeCamFrame(from.camName, "black", 0)
+	ChangeCamFrame(to.camName, "black",0)
+	await get_tree().create_timer(2.5).timeout
 	ChangeCamFrame(from.camName, from.animation.name, from.animation.frame)
 	ChangeCamFrame(to.camName, to.animation.name, to.animation.frame)
-	print("Cambiando-..")
+	SignalManager.bTimerSignal.emit()
 	
 
 # Move the camera auto throw x-axis.
@@ -111,6 +115,7 @@ func MoveCameraAuto() -> void:
 
 #Change the animated sprite to certain frame
 func ChangeCamFrame(camName: String, animation: String, frame: int) -> void:
+	#print("camName: %s anim: %s frame %s" % [camName, animation, str(frame)])
 	if not roomDictionary.has(camName):
 		print("Cam name doesn't exist")
 		return

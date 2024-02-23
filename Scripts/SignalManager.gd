@@ -1,6 +1,10 @@
 extends Node
 
+# Its functional for all enimes
 signal bonnieSignal(from: Room, to: Room)
 
-#Bonnie timer signal
+#its for all enemies
 signal bTimerSignal
+
+#Change light
+signal bAttackSignal(enable: bool)

@@ -589,8 +589,6 @@ script = ExtResource("10_el3pl")
 visible = false
 sprite_frames = SubResource("SpriteFrames_vpsad")
 animation = &"state"
-frame = 2
-frame_progress = 1.0
 script = ExtResource("10_el3pl")
 
 [node name="Disabled" type="AnimatedSprite2D" parent="Rooms"]

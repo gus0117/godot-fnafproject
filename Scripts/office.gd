@@ -12,9 +12,11 @@ var isRightLightOn: bool = false
 var isShowMonitor: bool = false
 var isCameraEnable: bool = true
 var isSwitchEnable: bool
-
+var isBonnieAttack : bool = false
+var isChicaAttack : bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	SignalManager.bAttackSignal.connect(bAttack)
 	$SFX/Ambience.play()
 	$SFX/FanSFX.play()
 	#print("Enter scene")
@@ -83,10 +85,16 @@ func AnimateLights(left: bool, right: bool) -> void:
 		return
 	$SFX/BuzzLightsSFX.play()
 	if(left):
-		$Animations/Lights.play("leftLights")
+		if isBonnieAttack:
+			$Animations/Lights.play("leftLightsBonnie")
+		else:
+			$Animations/Lights.play("leftLights")
 		return
 	if(right):
-		$Animations/Lights.play("rightLights")
+		if isChicaAttack:
+			$Animations/Lights.play("rightLightsChica")
+		else:
+			$Animations/Lights.play("rightLights")
 		return
 
 func AnimateMonitor() -> void:
@@ -99,6 +107,9 @@ func AnimateMonitor() -> void:
 	else:
 		$Camera/Monitor/MonitorAnimation.play_backwards("MonitorIn")
 		
+
+func bAttack(en : bool):
+	isBonnieAttack = en
 
 func _on_left_door_btn_pressed():
 	isLeftDoorOn = not isLeftDoorOn

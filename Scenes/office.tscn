@@ -409,7 +409,6 @@ position = Vector2(629, 359)
 [node name="Lights" type="AnimatedSprite2D" parent="Animations"]
 sprite_frames = SubResource("SpriteFrames_eeo6b")
 autoplay = "default"
-frame_progress = 1.0
 
 [node name="Fan" type="Node2D" parent="."]
 

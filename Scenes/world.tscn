@@ -157,7 +157,7 @@ autostart = true
 script = ExtResource("8_6rwjc")
 monitorManager = NodePath("../MonitorScene")
 
-[node name="BonnieTimer" type="Timer" parent="EnemyManager"]
+[node name="EnemiesTimer" type="Timer" parent="EnemyManager"]
 wait_time = 3.0
 one_shot = true
 autostart = true
@@ -166,4 +166,4 @@ autostart = true
 [connection signal="mouse_exited" from="GUI/SwitchArea" to="." method="_on_switch_area_mouse_exited"]
 [connection signal="timeout" from="GUI/Battery/BatteryTimer" to="GUI/Battery" method="_on_battery_timer_timeout"]
 [connection signal="timeout" from="NightTimer" to="." method="_on_night_timer_timeout"]
-[connection signal="timeout" from="EnemyManager/BonnieTimer" to="EnemyManager" method="_on_bonnie_timer_timeout"]
+[connection signal="timeout" from="EnemyManager/EnemiesTimer" to="EnemyManager" method="_on_enemies_timer_timeout"]
