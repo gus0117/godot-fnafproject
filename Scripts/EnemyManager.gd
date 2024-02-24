@@ -123,8 +123,10 @@ func MoveBonnie(e : Enemy) -> void:
 				e.pos.animation.frame = rng.randi_range(1,2);
 			auxRoom.animation.frame = 0
 		"attack":
+			auxRoom.camName="cam2b"
 			e.pos.camName = "cam2b"
 			e.pos.animation.frame = 2
+			SignalManager.bAttackSignal.emit(false)
 			#remove from door
 		_:
 			print("No hay camara relacionada")
@@ -132,10 +134,8 @@ func MoveBonnie(e : Enemy) -> void:
 	if moved:
 		if e.pos.camName == "attack":
 			SignalManager.bAttackSignal.emit(true)
-			SignalManager.bonnieSignal.emit(auxRoom, e.pos)
 			#SignalManager.StartEnemiesTimer()
-		else:
-			SignalManager.bonnieSignal.emit(auxRoom, e.pos)
+		SignalManager.bonnieSignal.emit(auxRoom, e.pos)
 	pass
 
 func DuplicateRoom(room : Room) -> Room:
