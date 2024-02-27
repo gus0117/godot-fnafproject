@@ -116,6 +116,9 @@ func MoveCameraAuto() -> void:
 #Change the animated sprite to certain frame
 func ChangeCamFrame(camName: String, animation: String, frame: int) -> void:
 	#print("camName: %s anim: %s frame %s" % [camName, animation, str(frame)])
+	if camName == "attack":
+		print("Attacking")
+		return
 	if not roomDictionary.has(camName):
 		print("Cam name doesn't exist")
 		return

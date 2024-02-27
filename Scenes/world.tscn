@@ -150,7 +150,7 @@ text = "12:00 AM"
 [node name="SwitchFX" type="AudioStreamPlayer2D" parent="SoundFX"]
 
 [node name="NightTimer" type="Timer" parent="."]
-wait_time = 10.0
+wait_time = 60.0
 autostart = true
 
 [node name="EnemyManager" type="Node" parent="." node_paths=PackedStringArray("monitorManager")]

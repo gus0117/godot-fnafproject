@@ -8,3 +8,6 @@ signal bTimerSignal
 
 #Change light
 signal bAttackSignal(enable: bool)
+
+#Signals for finishing level
+signal nightEndSignal

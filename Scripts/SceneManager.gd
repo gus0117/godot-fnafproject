@@ -12,6 +12,7 @@ func _ready():
 	monitorScene.EnableMonitorCam(false)
 	officeScene.EnableOfficeCam(true)
 	$GUI/Clock/ClockLabel.text = Global.GetHourString()
+	SignalManager.nightEndSignal.connect(_on_night_end)
 
 func SwitchToOffice() -> void :
 	monitorScene.StopSoundBG()
@@ -47,5 +48,8 @@ func _on_switch_area_mouse_exited():
 
 
 func _on_night_timer_timeout():
-	Global.SetNextHour()
+	Global.IncreseHour()
 	$GUI/Clock/ClockLabel.text = Global.GetHourString()
+
+func _on_night_end() -> void:
+	print("night end, make animation")
